@@ -1,27 +1,36 @@
 <header>
-    <nav class="navigation">
-        <ul class="list">
-            <li><a href="">Home</a></li>
-            <li><a href="">About Me</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Contact Me</a></li>
-        </ul>
-        <ul class="list">
-            <li>
-                <a href="https://www.linkedin.com/in/dev-eric" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/EricSouzaDosSantos" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            <li>
-                <a href="https://wa.me/11960703544" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                  </a>
-            </li>
-        </ul>
+    <nav class="navigation" [ngStyle]="{'border-radius': borderRadius}">
+      
+      <button class="hamburger" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+  
+      <ul class="nav-list" [class.active]="menuOpen">
+        <li><a href="">Home</a></li>
+        <li><a href="">About Me</a></li>
+        <li><a href="">Projects</a></li>
+        <li><a href="">Contact Me</a></li>
+      </ul>
+  
+      <ul class="nav-list social">
+        <li>
+          <a href="https://www.linkedin.com/in/dev-eric" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/EricSouzaDosSantos" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/11960703544" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </li>
+      </ul>
     </nav>
-</header>
+  </header>
+  
