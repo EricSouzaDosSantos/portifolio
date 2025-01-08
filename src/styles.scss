@@ -1,0 +1,9 @@
+$bg-body: #080808;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    background-color: $bg-body;
+}
