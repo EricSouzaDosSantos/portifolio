@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+// 🎨 Variáveis
+$primary-color: #1D3042;
+$secondary-color: #fff;
+$hover-color: #14202E;
+$text-color: #E0E0E0;
+$bg-body: #080808;
+$font-primary: "IBM Plex Mono", serif;
+$font-size-title: 2.5rem;
+$font-size-description: 1.5rem;
+
+$button-height: 70px;
+$button-radius: 20px;
+
+.home-intro {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 4rem;
+    width: 100%;
+    gap: 2rem;
+
+    .home-intro-photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+
+        img {
+            max-width: 85%;
+            border-radius: 50%;
+        }
+    }
+
+    .home-intro-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+
+        .home-intro-title {
+            font-size: $font-size-title;
+            font-family: $font-primary;
+            font-weight: 600;
+            font-style: italic;
+            margin-top: 1rem;
+            color: $secondary-color;
+            width: 90%;
+            text-align: start;
+
+            .home-intro-title-name {
+                position: relative;
+                font-style: normal;
+                font-weight: 400;
+                text-align: start;
+                overflow: hidden;
+
+                &::before {
+                    content: "Eric Souza";
+                    animation: words 20s steps(1, end) infinite;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: calc(100% + 8px);
+                    height: 100%;
+                    background-color: $bg-body;
+                    border-left: 5px solid $primary-color;
+                    right: -8px;
+                    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+                }
+
+                @keyframes cursor {
+                    to {
+                        border-left: 2px solid $primary-color;
+                    }
+                }
+
+                @keyframes words {
+
+                    0%,
+                    20% {
+                        content: "Desenvolvedor";
+                    }
+
+                    21%,
+                    40% {
+                        content: "Frellancer";
+                    }
+
+                    41%,
+                    60% {
+                        content: "Entusiasta";
+                    }
+
+                    61%,
+                    80% {
+                        content: "Programador";
+                    }
+
+                    81%,
+                    100% {
+                        content: "Eric Souza";
+                    }
+                }
+
+
+                @keyframes typing {
+
+                    10%,
+                    15%,
+                    30%,
+                    35%,
+                    50%,
+                    55%,
+                    70%,
+                    75%,
+                    90%,
+                    95% {
+                        width: 0;
+                    }
+
+                    5%,
+                    20%,
+                    25%,
+                    40%,
+                    45%,
+                    60%,
+                    65%,
+                    80%,
+                    85% {
+                        width: calc(100% + 8px);
+                    }
+                }
+            }
+
+            .desktop-break {
+                display: inline;
+            }
+        }
+
+        .home-intro-description {
+            font-size: $font-size-description;
+            color: $text-color;
+            font-family: $font-primary;
+            font-weight: 400;
+            font-style: italic;
+            width: 90%;
+            text-align: start;
+            margin-top: 1rem;
+        }
+
+        .home-intro-button {
+            background-color: $primary-color;
+            color: $secondary-color;
+            width: 90%;
+            height: $button-height;
+            border-radius: $button-radius;
+            border: none;
+            margin-top: 1.5rem;
+            font-family: $font-primary;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+
+            &:hover {
+                background-color: $hover-color;
+                transform: scale(1.05);
+            }
+
+            &:focus {
+                outline: 2px solid $hover-color;
+                outline-offset: 2px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .home-intro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 4rem;
+        width: 100%;
+
+        .home-intro-photo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+
+            .photo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            img {
+                max-width: 75%;
+                border-radius: 50%;
+            }
+        }
+
+        .home-intro-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            .home-intro-title {
+                font-size: $font-size-title;
+                font-family: $font-primary;
+                font-weight: 600;
+                font-style: italic;
+                margin-top: 1rem;
+                color: $secondary-color;
+                width: 90%;
+                text-align: start;
+
+                .desktop-break {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+    @media (max-width: 768px) {
+
+        .home-intro {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 4rem;
+            width: 100%;
+
+            .home-intro-photo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 80%;
+
+                .photo {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                img {
+                    max-width: 75%;
+                    border-radius: 50%;
+                }
+            }
+
+            .home-intro-content {
+                
+                .home-intro-description{
+                    font-size: 1rem;
+                }
+
+                .home-intro-title {
+                    font-size: 1.6rem;
+                    .desktop-break {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+}
