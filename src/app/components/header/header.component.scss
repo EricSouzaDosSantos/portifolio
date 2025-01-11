@@ -34,7 +34,7 @@ li{
 .nav-list{
     display: flex;
     justify-content: space-between;
-    width: 40%;
+    width: 50%;
     a:hover{
         color: #fff;
         transition: color 0.5s ease;   
@@ -44,7 +44,7 @@ li{
 .nav-list.social{
     display: flex;
     justify-content: flex-end;
-    width: 40%;
+    width: 20%;
     gap: 2em;
 
     a{
