@@ -1,0 +1,260 @@
+@use 'sass:color';
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+
+$primary-color: #1d3042;
+$secondary-color: #ffffff;
+$hover-color: #14202e;
+$text-color: #e0e0e0;
+$bg-body: #080808;
+$accent-color: #4caf50;
+$progress-bg: #2e3a48;
+$font-primary: "IBM Plex Mono", serif;
+$font-size-title: 2.5rem;
+$font-size-description: 1.5rem;
+$badge-shadow: rgba(0, 0, 0, 0.2);
+$primary-color: #1d3042;
+$secondary-color: #ffffff;
+$accent-color: #4caf50;
+$hover-color: #14202e;
+$text-color: #333333;
+$description-bg: #f7f9fc;
+$badge-border: $accent-color;
+$footer-bg: #1d3042;
+
+.about-me-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+    padding: 2rem;
+
+    .badge-container {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .badge-strap {
+            width: 10%;
+            height: 4%;
+            background: $accent-color;
+            border-radius: 1rem;
+            position: absolute;
+            top: -7%;
+            left: 50%;
+            transform: translateX(-50%);
+            
+        }
+
+        .badge {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 100%;
+            background: $secondary-color;
+            border: 1% solid $badge-border;
+            border-radius: 2%;
+            box-shadow: 0% 2% 5% rgba(0, 0, 0, 0.2);
+            padding: 5%;
+
+            .badge-header {
+                display: flex;
+                align-items: center;
+                border-bottom: 0.3% solid $primary-color;
+                padding-bottom: 3%;
+
+                .photo-area {
+                    width: 30%;
+                    height: 30%;
+                    background: #d3d3d3;
+                    border-radius: 10%;
+                    overflow: hidden;
+                    margin-right: 5%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .info-area {
+                    h1 {
+                        font-size: 120%;
+                        color: $primary-color;
+                        margin-bottom: 2%;
+                    }
+
+                    h2 {
+                        font-size: 100%;
+                        color: $text-color;
+                        margin-bottom: 2%;
+                    }
+
+                    p {
+                        font-size: 90%;
+                        color: $text-color;
+                    }
+                }
+            }
+
+            .description-area {
+                margin-top: 5%;
+                background: $description-bg;
+                padding: 3%;
+                border-radius: 1rem;
+                font-size: 90%;
+                color: $text-color;
+                line-height: 1.5;
+            }
+
+            .badge-footer {
+                margin-top: 5%;
+                background: $footer-bg;
+                padding: 2%;
+                height: 30px;
+                border-radius: 1rem;
+                text-align: center;
+                color: $secondary-color;
+                font-size: 80%;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .skills-section {
+        width: 50%;
+        background: linear-gradient(145deg, $primary-color, $hover-color);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: $accent-color;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: $secondary-color;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+
+            &:hover {
+                transform: translateY(-8px);
+                background: #34495e;
+                // color: $secondary-color;
+
+                .skill-info{
+                    color: $accent-color;
+                }
+
+                .fab.fa-java {
+                    color: #f89820;
+                }
+
+                .fab.fa-angular {
+                    color: #dd0031;
+                }
+
+                .fab.fa-js {
+                    color: #f7df1e;
+                }
+
+                .fab.fa-sass {
+                    color: #c76395;
+                }
+
+                .fab.fa-html5 {
+                    color: #e34f26;
+                }
+
+                .fab.fa-css3-alt {
+                    color: #264de4;
+                }
+
+                .fab.fa-git {
+                    color: #f1502f;
+                }
+
+                .fab.fa-aws {
+                    color: #ff9900;
+                }
+
+                .fab.fa-github {
+                    color: #211f1f;
+                }
+            }
+
+            .skill-info {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                font-size: 1.2rem;
+                color: $primary-color;
+
+                i {
+                    font-size: 2.2rem;
+                    color: $primary-color;
+                    transition: color 0.3s ease;
+                }
+            }
+
+            .skill-info {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                font-size: 1.2rem;
+                color: $primary-color;
+
+                i {
+                    font-size: 2.2rem;
+                    color: $primary-color;
+                }
+            }
+
+            .progress-bar {
+                margin-top: 1rem;
+                width: 80%;
+                height: 12px;
+                background: $primary-color;
+                border-radius: 8px;
+                overflow: hidden;
+                position: relative;
+
+                .progress {
+                    height: 100%;
+                    background: linear-gradient(90deg, $accent-color, color.adjust($primary-color, $lightness: -10%));
+                    animation: fill-bar 1.2s ease forwards;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fill-bar {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
