@@ -24,7 +24,8 @@ $footer-bg: #1d3042;
 .about-me-section {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: stretch;
+    margin-top: 2rem;
     gap: 2rem;
     padding: 2rem;
 
@@ -36,12 +37,12 @@ $footer-bg: #1d3042;
         position: relative;
 
         .badge-strap {
-            width: 10%;
-            height: 4%;
+            width: 20%;
+            height: 3%;
             background: $accent-color;
             border-radius: 1rem;
             position: absolute;
-            top: -7%;
+            top: -5%;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -65,7 +66,7 @@ $footer-bg: #1d3042;
 
                 .photo-area {
                     width: 30%;
-                    height: 30%;
+                    height: 85%;
                     background: #d3d3d3;
                     border-radius: 10%;
                     overflow: hidden;
@@ -103,10 +104,39 @@ $footer-bg: #1d3042;
                 background: $description-bg;
                 padding: 3%;
                 border-radius: 1rem;
-                font-size: 90%;
+                font-size: $font-size-description;
                 color: $text-color;
                 line-height: 1.5;
-            }
+              
+                ul.highlights {
+                  margin-top: 1.5rem;
+                  padding-left: 1.5rem;
+                  list-style-type: disc;
+              
+                  li {
+                    margin-bottom: 1rem;
+                    font-size: 1rem;
+                    color: darken($text-color, 10%);
+              
+                    strong {
+                      color: $accent-color;
+                      font-weight: bold;
+                    }
+              
+                    ul {
+                      margin-top: 0.5rem;
+                      padding-left: 1.5rem;
+                      list-style-type: circle;
+              
+                      li {
+                        font-size: 0.95rem;
+                        color: lighten($text-color, 5%);
+                      }
+                    }
+                  }
+                }
+              }
+              
 
             .badge-footer {
                 margin-top: 5%;
