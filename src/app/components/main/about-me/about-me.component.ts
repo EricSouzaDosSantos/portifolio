@@ -18,7 +18,7 @@ export class AboutMeComponent {
     { name: 'Java', icon: 'fa-java', progress: 90 },
     { name: 'Angular', icon: 'fa-angular', progress: 30 },
     { name: 'JavaScript', icon: 'fa-js', progress: 60 },
-    { name: 'Spring', icon: 'fa-spring', progress: 80 },
+    { name: 'Spring', icon: 'fa-java', progress: 80 },
     { name: 'SCSS', icon: 'fa-sass', progress: 40 },
     { name: 'HTML', icon: 'fa-html5', progress: 95 },
     { name: 'CSS', icon: 'fa-css3-alt', progress: 90 },
