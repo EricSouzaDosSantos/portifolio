@@ -24,13 +24,25 @@ $footer-bg: #1d3042;
 .about-me-section {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    flex-direction: column;
+    align-items: center;
     margin-top: 2rem;
     gap: 2rem;
     padding: 2rem;
 
+    // &:first-child{
+    //     display: flex;
+    //     align-items: center;
+    // }
+
+    // &:last-child{
+    //     display: flex;
+    //     align-items: start;
+    // }
+
+
     .badge-container {
-        width: 50%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -49,8 +61,8 @@ $footer-bg: #1d3042;
 
         .badge {
             display: flex;
-            flex-direction: column;
-            width: 80%;
+            flex-direction: row;
+            width: 85%;
             height: 100%;
             background: $secondary-color;
             border: 1% solid $badge-border;
@@ -60,13 +72,15 @@ $footer-bg: #1d3042;
 
             .badge-header {
                 display: flex;
-                align-items: center;
+                align-items: start;
+                flex-direction: column;
+                width: 40%;
+                height: 100%;
                 border-bottom: 0.3% solid $primary-color;
-                padding-bottom: 3%;
 
                 .photo-area {
-                    width: 30%;
-                    height: 85%;
+                    width: 70%;
+                    height: 50%;
                     background: #d3d3d3;
                     border-radius: 10%;
                     overflow: hidden;
@@ -80,6 +94,8 @@ $footer-bg: #1d3042;
                 }
 
                 .info-area {
+                    margin-top: 7%;
+
                     h1 {
                         font-size: 120%;
                         color: $primary-color;
@@ -100,43 +116,45 @@ $footer-bg: #1d3042;
             }
 
             .description-area {
-                margin-top: 5%;
+                // margin-top: 5%;
                 background: $description-bg;
                 padding: 3%;
+                width: 90%;
+                height: 100%;
                 border-radius: 1rem;
-                font-size: $font-size-description;
+                font-size: 1rem;
                 color: $text-color;
                 line-height: 1.5;
-              
+
                 ul.highlights {
-                  margin-top: 1.5rem;
-                  padding-left: 1.5rem;
-                  list-style-type: disc;
-              
-                  li {
-                    margin-bottom: 1rem;
-                    font-size: 1rem;
-                    color: darken($text-color, 10%);
-              
-                    strong {
-                      color: $accent-color;
-                      font-weight: bold;
+                    margin-top: 1rem;
+                    padding-left: 1rem;
+                    list-style-type: disc;
+
+                    li {
+                        margin-bottom: 0.5rem;
+                        // font-size: 1rem;
+                        color: darken($text-color, 10%);
+
+                        strong {
+                            color: $accent-color;
+                            font-weight: bold;
+                        }
+
+                        ul {
+                            margin-top: 0.5rem;
+                            padding-left: 1.5rem;
+                            list-style-type: circle;
+
+                            li {
+                                // font-size: 0.95rem;
+                                color: lighten($text-color, 5%);
+                            }
+                        }
                     }
-              
-                    ul {
-                      margin-top: 0.5rem;
-                      padding-left: 1.5rem;
-                      list-style-type: circle;
-              
-                      li {
-                        font-size: 0.95rem;
-                        color: lighten($text-color, 5%);
-                      }
-                    }
-                  }
                 }
-              }
-              
+            }
+
 
             .badge-footer {
                 margin-top: 5%;
@@ -175,8 +193,13 @@ $footer-bg: #1d3042;
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            gap: 1rem;
+            padding: 1rem;
         }
+
+
+
+
 
         .skill-card {
             background: $secondary-color;
@@ -190,7 +213,7 @@ $footer-bg: #1d3042;
                 background: #34495e;
                 // color: $secondary-color;
 
-                .skill-info{
+                .skill-info {
                     color: $accent-color;
                 }
 
@@ -288,7 +311,7 @@ $footer-bg: #1d3042;
         align-items: center;
         z-index: 1000;
     }
-    
+
     .modal-content {
         background: #fff;
         padding: 2rem;
@@ -338,9 +361,139 @@ $footer-bg: #1d3042;
             opacity: 0;
             transform: scale(0.95);
         }
+
         to {
             opacity: 1;
             transform: scale(1);
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .about-me-section {
+        //   gap: 1.5rem;
+        //   padding: 1.5rem;
+
+        .badge-container {
+            .badge {
+                flex-direction: row;
+                align-items: start;
+                width: 100%;
+                gap: 1rem;
+
+
+                .badge-header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    width: 40%;
+
+                    .photo-area {
+                        width: 70%;
+                        margin-right: 0;
+                        margin-bottom: 1rem;
+                    }
+
+                    .info-area {
+                        h1 {
+                            font-size: 120%;
+                        }
+
+                        h2 {
+                            font-size: 100%;
+                        }
+
+                        p {
+                            font-size: 95%;
+                        }
+                    }
+                }
+
+                .description-area {
+                    width: 60%;
+                    height: 100%;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        .skills-section {
+            width: 100%;
+
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .skill-card {
+                .skill-info {
+                    font-size: 1rem;
+
+                    i {
+                        font-size: 2rem;
+                    }
+                }
+
+                .progress-bar {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about-me-section {
+        //   padding: 1rem;
+        //   gap: 1rem;
+
+        .badge-container {
+            .badge {
+                .badge-header {
+                    .photo-area {
+                        width: 70%;
+                    }
+
+                    .info-area {
+                        h1 {
+                            font-size: 90%;
+                        }
+
+                        h2 {
+                            font-size: 80%;
+                        }
+
+                        p {
+                            font-size: 70%;
+                        }
+                    }
+                }
+
+                .description-area {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .skills-section {
+            .skills-container {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .skill-card {
+                .skill-info {
+                    font-size: 0.9rem;
+
+                    i {
+                        font-size: 1.8rem;
+                    }
+                }
+
+                .progress-bar {
+                    width: 100%;
+                }
+            }
         }
     }
 }
