@@ -17,14 +17,10 @@ export class AboutMeComponent {
   skills = [
     { name: 'Java', icon: 'fa-java', progress: 90 },
     { name: 'Angular', icon: 'fa-angular', progress: 30 },
-    { name: 'JavaScript', icon: 'fa-js', progress: 60 },
     { name: 'Spring', icon: 'fa-java', progress: 80 },
     { name: 'SCSS', icon: 'fa-sass', progress: 40 },
-    { name: 'HTML', icon: 'fa-html5', progress: 95 },
-    { name: 'CSS', icon: 'fa-css3-alt', progress: 90 },
     { name: 'Git', icon: 'fa-git', progress: 85 },
     { name: 'AWS', icon: 'fa-aws', progress: 50 },
-    { name: 'GitHub', icon: 'fa-github', progress: 70 }
   ];
   
 
@@ -69,29 +65,17 @@ export class AboutMeComponent {
       case 'Angular':
         this.technologies = ['RxJS', 'NgRx', 'Typescript'];
         break;
-      case 'JavaScript':
-        this.technologies = ['Node.js', 'Express', 'React'];
-        break;
       case 'Spring':
         this.technologies = ['Spring Security', 'Spring Boot', 'Spring Cloud', 'JPA', 'Hibernate', 'RESTful', 'Spring Web', 'Thymeleaf', 'RabbitMQ', 'Kafka'];
         break;
       case 'SCSS':
-        this.technologies = ['CSS3', 'BEM', 'Flexbox'];
-        break;
-      case 'HTML':
-        this.technologies = ['HTML5', 'SEO', 'Acessibilidade'];
-        break;
-      case 'CSS':
-        this.technologies = ['CSS Grid', 'Flexbox', 'SASS'];
+        this.technologies = ['CSS3', 'BEM'];
         break;
       case 'Git':
         this.technologies = [];
         break;
       case 'AWS':
         this.technologies = ['S3', 'EC2', 'Load Balancers', 'VPC', 'Security Groups', 'Route53'];
-        break;
-      case 'GitHub':
-        this.technologies = ['Git', 'Actions'];
         break;
     }
 
