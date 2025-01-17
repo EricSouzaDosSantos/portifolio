@@ -5,7 +5,7 @@ $primary-color: #1d3042;
 $secondary-color: #ffffff;
 $hover-color: #14202e;
 $text-color: #e0e0e0;
-$bg-body: #080808;
+$bg-body: #121d28;
 $accent-color: #4caf50;
 $progress-bg: #2e3a48;
 $font-primary: "IBM Plex Mono", serif;
@@ -51,7 +51,7 @@ $footer-bg: #1d3042;
         .badge-strap {
             width: 20%;
             height: 3%;
-            background: $accent-color;
+            background: linear-gradient(400deg, $primary-color, $accent-color);
             border-radius: 1rem;
             position: absolute;
             top: -5%;
@@ -64,17 +64,22 @@ $footer-bg: #1d3042;
             flex-direction: row;
             width: 85%;
             height: 100%;
-            background: $secondary-color;
+            background: linear-gradient(100deg, $primary-color, $accent-color);
             border: 1% solid $badge-border;
             border-radius: 2%;
             box-shadow: 0% 2% 5% rgba(0, 0, 0, 0.2);
             padding: 5%;
 
+            &:nth-child(3) {
+                display: flex;
+                flex-direction: column;
+            }
+
             .badge-header {
                 display: flex;
                 align-items: start;
                 flex-direction: column;
-                width: 40%;
+                width: 45%;
                 height: 100%;
                 border-bottom: 0.3% solid $primary-color;
 
@@ -95,36 +100,49 @@ $footer-bg: #1d3042;
 
                 .info-area {
                     margin-top: 7%;
+                    width: 100%;
+
+                    .fab.fa-envelope {
+                        color: black;
+                        width: 50px;
+                    }
+
+                    .fab.fa-phone {
+                        color: black;
+                    }
 
                     h1 {
                         font-size: 120%;
-                        color: $primary-color;
+                        color: $secondary-color;
                         margin-bottom: 2%;
                     }
 
                     h2 {
                         font-size: 100%;
-                        color: $text-color;
+                        color: $secondary-color;
                         margin-bottom: 2%;
                     }
 
                     p {
                         font-size: 90%;
-                        color: $text-color;
+                        padding: 1%;
+                        color: $secondary-color;
                     }
                 }
             }
 
             .description-area {
-                // margin-top: 5%;
-                background: $description-bg;
+                // margin: 5% auto; 
+                background: linear-gradient(120deg, #2a3e52, #4caf50);
                 padding: 3%;
                 width: 90%;
-                height: 100%;
+                height: auto;
                 border-radius: 1rem;
                 font-size: 1rem;
-                color: $text-color;
+                color: #e0e0e0;
+                text-align: justify;
                 line-height: 1.5;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
                 ul.highlights {
                     margin-top: 1rem;
@@ -134,7 +152,7 @@ $footer-bg: #1d3042;
                     li {
                         margin-bottom: 0.5rem;
                         // font-size: 1rem;
-                        color: darken($text-color, 10%);
+                        color: darken($description-bg, 10%);
 
                         strong {
                             color: $accent-color;
@@ -157,22 +175,25 @@ $footer-bg: #1d3042;
 
 
             .badge-footer {
-                margin-top: 5%;
-                background: $footer-bg;
-                padding: 2%;
-                height: 30px;
-                border-radius: 1rem;
-                text-align: center;
+                cursor: pointer;
+                background: linear-gradient(100deg, $primary-color, $accent-color);
                 color: $secondary-color;
-                font-size: 80%;
-                font-weight: bold;
+                width: 70%;
+                padding: 0.5rem;
+                text-align: center;
+                border-radius: 0.5rem;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: linear-gradient(100deg, $primary-color, $accent-color);
+                }
             }
         }
     }
 
     .skills-section {
-        width: 50%;
-        background: linear-gradient(145deg, $primary-color, $hover-color);
+        width: 85%;
+        background: linear-gradient(100deg, $primary-color, $accent-color);
         padding: 2rem;
         border-radius: 16px;
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
@@ -186,13 +207,13 @@ $footer-bg: #1d3042;
             text-align: center;
             font-size: 2.2rem;
             font-weight: bold;
-            color: $accent-color;
+            color: $bg-body;
             margin-bottom: 1.5rem;
         }
 
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
             gap: 1rem;
             padding: 1rem;
         }
@@ -210,12 +231,15 @@ $footer-bg: #1d3042;
 
             &:hover {
                 transform: translateY(-8px);
-                background: #34495e;
-                // color: $secondary-color;
+                background: linear-gradient(120deg, #2a3e52, #4caf50);
+                background-size: 250%;
+                animation: move-gradient 3s infinite linear;
 
-                .skill-info {
-                    color: $accent-color;
-                }
+                // .skill-info {
+                //     color: $bg-body;
+                // }
+
+                
 
                 .fab.fa-java {
                     color: #f89820;
@@ -245,6 +269,10 @@ $footer-bg: #1d3042;
                     color: #f1502f;
                 }
 
+                .fa-solid.fa-leaf {
+                    color: $accent-color;
+                }
+
                 .fab.fa-aws {
                     color: #ff9900;
                 }
@@ -263,7 +291,9 @@ $footer-bg: #1d3042;
 
                 i {
                     font-size: 2.2rem;
-                    color: $primary-color;
+                    // color: $primary-color;
+                    color: lighten($accent-color, 10%);
+
                     transition: color 0.3s ease;
                 }
             }
@@ -278,8 +308,11 @@ $footer-bg: #1d3042;
                 i {
                     font-size: 2.2rem;
                     color: $primary-color;
+                    transition: color 0.3s ease;
+
                 }
             }
+
 
             .progress-bar {
                 margin-top: 1rem;
@@ -292,9 +325,36 @@ $footer-bg: #1d3042;
 
                 .progress {
                     height: 100%;
-                    background: linear-gradient(90deg, $accent-color, color.adjust($primary-color, $lightness: -10%));
-                    animation: fill-bar 1.2s ease forwards;
+                    background: linear-gradient(90deg, lighten($accent-color, 20%), lighten($accent-color, 40%));
+                    animation: fill-bar 2s ease forwards; 
                 }
+            }
+
+
+        }
+
+        @keyframes move-gradient {
+            0% {
+                background-position: 0% 25%;
+            }
+
+            25% {
+                background-position: 25% 50%;
+
+            }
+
+            50% {
+                background-position: 50% 75%;
+
+            }
+
+            75% {
+                background-position: 75% 100%;
+
+            }
+
+            100% {
+                background-position: 100% 0%;
             }
         }
     }
@@ -422,7 +482,7 @@ $footer-bg: #1d3042;
             width: 100%;
 
             .skills-container {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
             }
 
             .skill-card {
@@ -444,49 +504,89 @@ $footer-bg: #1d3042;
 
 @media (max-width: 768px) {
     .about-me-section {
-        //   padding: 1rem;
-        //   gap: 1rem;
+        width: 100%;
+        margin-top: 20%;
+        padding: 1rem;
+        gap: 1rem;
 
         .badge-container {
+            width: 100%;
+
+            .badge-strap {
+                width: 50%;
+                height: 2.5%;
+                background: $accent-color;
+                border-radius: 1rem;
+                position: absolute;
+                top: -4%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
             .badge {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                border-radius: 20px;
+
                 .badge-header {
+                    width: 90%;
+
                     .photo-area {
                         width: 70%;
                     }
 
                     .info-area {
                         h1 {
-                            font-size: 90%;
+                            font-size: 100%;
                         }
 
                         h2 {
-                            font-size: 80%;
+                            font-size: 90%;
                         }
 
                         p {
-                            font-size: 70%;
+                            font-size: 85%;
                         }
                     }
                 }
 
                 .description-area {
-                    font-size: 1rem;
+                    font-size: 0.9rem;
+                    width: 100%;
+
+                    // .highlights {
+                    //     display: none;
+                    // }
                 }
+
             }
         }
 
         .skills-section {
+            width: 100%;
+            padding: 0;
+
+            .heading{
+                padding: 15px;
+            }
             .skills-container {
-                grid-template-columns: 1fr;
+                width: 100%;
+                height: 100%;
+                grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
                 gap: 0.5rem;
             }
 
             .skill-card {
+                padding: 15px;
                 .skill-info {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
+                    width: 100%;
+                    text-align: center;
 
                     i {
-                        font-size: 1.8rem;
+                        font-size: 1.3rem;
                     }
                 }
 
