@@ -5,10 +5,11 @@ $primary-color: #1D3042;
 $secondary-color: #fff;
 $hover-color: #14202E;
 $text-color: #E0E0E0;
-$bg-body: #080808;
+$bg-body: #121d28;
 $font-primary: "IBM Plex Mono", serif;
 $font-size-title: 2.5rem;
 $font-size-description: 1.5rem;
+$accent-color: #4caf50;
 
 $button-height: 70px;
 $button-radius: 20px;
@@ -154,7 +155,9 @@ $button-radius: 20px;
         }
 
         .home-intro-button {
-            background-color: $primary-color;
+            // background-color: $primary-color;
+            background: linear-gradient(90deg, $primary-color, $accent-color);
+
             color: $secondary-color;
             width: 90%;
             height: $button-height;
@@ -186,7 +189,7 @@ $button-radius: 20px;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin-top: 4rem;
+        margin-top: 9rem;
         width: 100%;
 
         .home-intro-photo {
