@@ -1,59 +1,71 @@
-  <section class="about-me-section">
-    <section class="badge-container">
-      <div class="badge-strap"></div>
-      <div class="badge">
-        <div class="badge-header">
-          <div class="photo-area">
-            <img src="my-animation.png" alt="Foto do Perfil" />
-          </div>
-          <div class="info-area">
-            <h1>Eric Souza</h1>
-            <h2>Desenvolvedor Full-Stack</h2>
-            <p>Email: eric.com</p>
-            <p>Telefone: (11) 96070-3544</p>
-          </div>
+<section class="about-me-section">
+  <section class="badge-container">
+    <div class="badge-strap"></div>
+    <div class="badge">
+      <div class="badge-header">
+        <div class="photo-area">
+          <img src="my-animation.png" alt="Foto do Perfil" />
         </div>
-        <div class="description-area">
-          <p>
-            Sou um desenvolvedor apaixonado por criar soluções robustas e eficientes. Com experiência em desenvolvimento back-end utilizando Java e Spring Boot e front-end com Angular e JavaScript, destaco-me por meu comprometimento com código limpo e arquitetura bem estruturada. Minha habilidade em integrar tecnologias modernas para resolver problemas complexos reflete minha paixão pela inovação.
-          </p>
-          <ul class="highlights">
-            <li><strong>Experiência:</strong> Desenvolvimento de APIs RESTful com Spring Boot e integração com AWS (S3, EC2).</li>
-            <li><strong>Projeto em destaque:</strong> Líder em um hackathon, responsável pelo desenvolvimento de uma API para construtor de formulários, com deploy na AWS.</li>
-            <li><strong>Metodologias ágeis:</strong> Experiência com Scrum e Kanban para gestão eficiente de projetos.</li>
-            <li><strong>Soft Skills:</strong> Proatividade, liderança, comunicação, colaboração, resiliência e organização.</li>
-            </ul>
-        </div>
-        
-        <!-- <div class="badge-footer">
-        </div> -->
-      </div>
-    </section>  
-
-    <section class="skills-section" id="skills">
-      <h2 class="heading">Principais Skills</h2>
-      <div class="skills-container">
-        <div class="skill-card" *ngFor="let skill of skills" (click)="openModal(skill.name)">
-          <div class="skill-info">
-            <i class="fab" [ngClass]="skill.icon"></i>
-            <span>{{ skill.name }}</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress" [ngStyle]="{'width': skill.progress + '%'}"></div>
-          </div>
+        <div class="info-area">
+          <h1>Eric Souza</h1>
+          <h2>Desenvolvedor Back-End</h2>
+          <p><i class="fa-solid fa-envelope"></i> {{informations[0]}}</p>
+          <p><i class="fa-solid fa-phone"></i> {{informations[1]}}</p>
+          <p><i class="fa-solid fa-location-dot"></i> {{informations[2]}}</p>
         </div>
       </div>
-    </section>
-    
+      <div class="description-area">
+        <p>
+          Olá! Meu nome é Eric Souza, sou um desenvolvedor back-end apaixonado por tecnologia. Desde que comecei minha
+          jornada na área, aos 16 anos em 2023, venho me dedicando a criar soluções robustas e eficientes,
+          principalmente no desenvolvimento back-end com Java e Spring.<br>
+          Atualmente, estou cursando Análise e Desenvolvimento de Sistemas no SENAC e trabalho constantemente para
+          expandir meus conhecimentos em tecnologias como Spring, AWS e Angular. Meu objetivo está em entregar sistemas
+          bem estruturados, com código limpo e escalável.
 
-    <div class="modal" *ngIf="isModalVisible" (click)="closeModal()"> 
-      <div class="modal-content" (click)="$event.stopPropagation()">
-        <h3>{{ selectedSkill }} - Tecnologias</h3>
-        <ul>
-          <li *ngFor="let tech of technologies">{{ tech }}</li>
+        </p>
+        <ul class="highlights" *ngIf="!isMobile || showHighlights">
+          <li><strong>Experiência:</strong> Desenvolvimento de APIs RESTful com Spring Boot e integração com AWS (S3,
+            EC2).</li>
+          <li><strong>Projeto em destaque:</strong> Líder em um hackathon, responsável pelo desenvolvimento de uma API
+            para construtor de formulários, com deploy na AWS.</li>
+          <li><strong>Metodologias ágeis:</strong> Experiência com Scrum e Kanban para gestão de projetos.</li>
+          <li><strong>Soft Skills:</strong> Proatividade, liderança, comunicação, colaboração, resiliência e
+            organização.</li>
         </ul>
-        <button (click)="closeModal()">Fechar</button>
+      </div>
+
+      <div class="badge-footer" *ngIf="isMobile" (click)="toggleHighlights()">
+        {{ showHighlights ? 'Ocultar Detalhes' : 'Ver Mais' }}
       </div>
     </div>
-    
+  </section>
+
+  <section class="skills-section" id="skills">
+    <h2 class="heading">Principais Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card" *ngFor="let skill of skills; let i = index" (click)="openModal(skill.name)"
+        (mouseover)="hoveredIndex = i" (mouseout)="hoveredIndex = null">
+        <div class="skill-info">
+          <i [ngClass]="skill.icon"></i>
+          <span class="skill-name" [ngStyle]="{'color': hoveredIndex === i ? skill.color : ''}">{{ skill.name }}</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress " [ngStyle]="{'width': skill.progress+'%'}"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="modal" *ngIf="isModalVisible" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h3>{{ selectedSkill }} - Tecnologias</h3>
+      <ul>
+        <li *ngFor="let tech of technologies">{{ tech }}</li>
+      </ul>
+      <button (click)="closeModal()">Fechar</button>
+    </div>
+  </div>
+
 </section>
