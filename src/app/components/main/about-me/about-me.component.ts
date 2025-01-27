@@ -42,7 +42,10 @@ export class AboutMeComponent implements OnInit {
   }
 
   private checkViewport() {
+    if (typeof window !== 'undefined') {
+
     this.isMobile = window.innerWidth <= 768; 
+    }
   }
 
   toggleHighlights() {
@@ -65,6 +68,8 @@ export class AboutMeComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onScroll(): void {
+    if (typeof window === 'undefined') return;
+
     const badgeElement = this.el.nativeElement.querySelector('.badge-container');
     const skillsSection = this.el.nativeElement.querySelector('.skills-section');
     const screenHeight = window.innerHeight;
