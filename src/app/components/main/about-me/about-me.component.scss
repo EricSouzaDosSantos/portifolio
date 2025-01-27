@@ -1,25 +1,38 @@
 @use 'sass:color';
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
-$primary-color: #1d3042;
-$secondary-color: #ffffff;
-$hover-color: #14202e;
-$text-color: #e0e0e0;
-$bg-body: #121d28;
-$accent-color: #4caf50;
-$progress-bg: #2e3a48;
+$primary-color: #191970;
+$secondary-color: #9cb5ff;
+$hover-color: #191970;
+$text-color: #E0E0E0;
+$bg-body: #12214e;
 $font-primary: "IBM Plex Mono", serif;
 $font-size-title: 2.5rem;
 $font-size-description: 1.5rem;
-$badge-shadow: rgba(0, 0, 0, 0.2);
-$primary-color: #1d3042;
-$secondary-color: #ffffff;
-$accent-color: #4caf50;
-$hover-color: #14202e;
-$text-color: #333333;
+$accent-color: #192f70;
+
+// $primary-color: #1d3042;
+// $secondary-color: #ffffff;
+// $hover-color: #14202e;
+// $text-color: #e0e0e0;
+// $bg-body: #121d28;
+// $accent-color: #4caf50;
+// $progress-bg: #2e3a48;
+// $font-primary: "IBM Plex Mono", serif;
+// $font-size-title: 2.5rem;
+// $font-size-description: 1.5rem;
+// $badge-shadow: rgba(0, 0, 0, 0.2);
+// $primary-color: #1d3042;
+// $secondary-color: #ffffff;
+// // $accent-color: #4caf50;
+// $hover-color: #14202e;
+// $text-color: #333333;
 $description-bg: #f7f9fc;
 $badge-border: $accent-color;
-$footer-bg: #1d3042;
+// $footer-bg: #1d3042;
+
+
+
 
 .about-me-section {
     display: flex;
@@ -133,12 +146,12 @@ $footer-bg: #1d3042;
 
             .description-area {
                 // margin: 5% auto; 
-                background: linear-gradient(120deg, #2a3e52, #4caf50);
+                background: linear-gradient(120deg, $primary-color, $secondary-color);
                 padding: 3%;
                 width: 90%;
                 height: auto;
                 border-radius: 1rem;
-                font-size: 1rem;
+                font-size: 1.3rem;
                 color: #e0e0e0;
                 text-align: justify;
                 line-height: 1.5;
@@ -155,7 +168,7 @@ $footer-bg: #1d3042;
                         color: darken($description-bg, 10%);
 
                         strong {
-                            color: $accent-color;
+                            color: $secondary-color;
                             font-weight: bold;
                         }
 
@@ -176,8 +189,8 @@ $footer-bg: #1d3042;
 
             .badge-footer {
                 cursor: pointer;
-                background: linear-gradient(100deg, $primary-color, $accent-color);
-                color: $secondary-color;
+                background: linear-gradient(100deg, $accent-color, $secondary-color);
+                color: $text-color;
                 width: 70%;
                 padding: 0.5rem;
                 text-align: center;
@@ -231,7 +244,7 @@ $footer-bg: #1d3042;
 
             &:hover {
                 transform: translateY(-8px);
-                background: linear-gradient(120deg, #2a3e52, #4caf50);
+                background: linear-gradient(120deg, $primary-color, $secondary-color);
                 background-size: 250%;
                 animation: move-gradient 3s infinite linear;
 
