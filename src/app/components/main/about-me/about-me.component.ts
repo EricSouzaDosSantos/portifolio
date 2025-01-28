@@ -44,7 +44,7 @@ export class AboutMeComponent implements OnInit {
   private checkViewport() {
     if (typeof window !== 'undefined') {
 
-    this.isMobile = window.innerWidth <= 768; 
+    this.isMobile = window.innerWidth <= 1000; 
     }
   }
 
