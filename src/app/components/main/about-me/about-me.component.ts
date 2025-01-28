@@ -102,22 +102,22 @@ export class AboutMeComponent implements OnInit {
     this.selectedSkill = skill;
     switch (skill) {
       case 'Java':
-        this.technologies = ['Spring Boot',];
+        this.technologies = ['Spring', 'Threads', 'Exceptions', 'Generics', 'POO', 'Design Patterns', 'Clean Code', 'Clea Arquiteture'];
         break;
       case 'Angular':
         this.technologies = ['RxJS', 'NgRx', 'Typescript'];
         break;
       case 'Spring':
-        this.technologies = ['Spring Security', 'Spring Boot', 'Spring Cloud', 'JPA', 'Hibernate', 'RESTful', 'Spring Web', 'Thymeleaf', 'RabbitMQ', 'Kafka'];
+        this.technologies = ['Spring Security', 'Spring Data', 'Spring Boot', 'Spring Cloud', 'JPA', 'Hibernate', 'RESTful', 'Spring Web', 'Thymeleaf', 'RabbitMQ', 'Kafka'];
         break;
       case 'SCSS':
         this.technologies = ['CSS3', 'BEM'];
         break;
       case 'Git':
-        this.technologies = [];
+        this.technologies = ['GitHub', 'Conventional Commits'];
         break;
       case 'AWS':
-        this.technologies = ['S3', 'EC2', 'Load Balancers', 'VPC', 'Security Groups', 'Route53'];
+        this.technologies = ['S3', 'EC2', 'Load Balancers', 'VPC', 'Security Groups', 'Route53', 'SSH'];
         break;
     }
 

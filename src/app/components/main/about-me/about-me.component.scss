@@ -330,7 +330,7 @@ $badge-border: $accent-color;
 
             .progress-bar {
                 margin-top: 1rem;
-                width: 80%;
+                width: 90%;
                 height: 12px;
                 background: $primary-color;
                 border-radius: 8px;
@@ -347,7 +347,7 @@ $badge-border: $accent-color;
             .skill-percentage {
                 position: absolute;
                 top: 24%;
-                left: 65%;
+                left: 70%;
                 transform: translate(-50%, -60%);
                 font-size: 1.5rem;
                 font-weight: bold;
@@ -399,19 +399,19 @@ $badge-border: $accent-color;
     }
 
     .modal-content {
-        background: #fff;
+        background: $primary-color;
         padding: 2rem;
-        border-radius: 8px;
+        border-radius: 30px;
         width: 80%;
         max-width: 500px;
         text-align: center;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        animation: fade-in 0.3s ease-in;
+        animation: fade-in 0.6s ease-in;
 
         h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: $primary-color;
+            color: $text-color;
         }
 
         ul {
@@ -419,7 +419,7 @@ $badge-border: $accent-color;
             padding: 0;
             margin-bottom: 1.5rem;
             font-size: 1.2rem;
-            color: $text-color;
+            color: $secondary-color;
 
             li {
                 margin: 0.5rem 0;
@@ -427,7 +427,7 @@ $badge-border: $accent-color;
         }
 
         button {
-            background: $accent-color;
+            background: $secondary-color;
             color: #fff;
             border: none;
             padding: 0.5rem 1rem;
