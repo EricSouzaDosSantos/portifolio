@@ -48,14 +48,20 @@
         (mouseover)="hoveredIndex = i" (mouseout)="hoveredIndex = null">
         <div class="skill-info">
           <i [ngClass]="skill.icon"></i>
-          <span class="skill-name" [ngStyle]="{'color': hoveredIndex === i ? skill.color : ''}">{{ skill.name }}</span>
+          <span class="skill-name" [ngStyle]="{ color: hoveredIndex === i ? skill.color : '' }">
+            {{ skill.name }}
+          </span>
         </div>
         <div class="progress-bar">
-          <div class="progress " [ngStyle]="{'width': skill.progress+'%'}"></div>
+          <div class="progress" [ngStyle]="{ width: skill.progress + '%' }"></div>
+        </div>
+        <div class="skill-percentage">
+          {{ skill.progress }}%
         </div>
       </div>
     </div>
   </section>
+
 
 
   <div class="modal" *ngIf="isModalVisible" (click)="closeModal()">
