@@ -1,72 +1,124 @@
 $primary-color: #191970;
 $secondary-color: #9cb5ff;
-$hover-color: #191970;
-$text-color: #E0E0E0;
+$hover-color: #1b1b8a;
+$text-color: #e0e0e0;
 $bg-body: #12214e;
 $font-primary: "IBM Plex Mono", serif;
-$font-size-title: 2.5rem;
-$font-size-description: 1.5rem;
-$accent-color: #192f70;
 
 .projects-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  background: $bg-body;
+
+  .title {
+    font-size: 2.5rem;
+    color: $text-color;
+    margin-bottom: 2rem;
+  }
+
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+
+    .project-card {
+      background: $primary-color;
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      width: 300px;
+      transition: transform 0.3s ease;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .card-header {
+        .img-area {
+          img {
+            width: 100%;
+            border-radius: 10px;
+          }
+        }
+
+        h2 {
+          color: $text-color;
+          margin-top: 1rem;
+          font-size: 1.5rem;
+        }
+      }
+
+      .buttons-area {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        button {
+          background: $secondary-color;
+          color: $primary-color;
+          border: none;
+          padding: 0.8rem 1.2rem;
+          cursor: pointer;
+          font-weight: bold;
+          transition: 0.3s;
+          border-radius: 8px;
+
+          &:hover {
+            background: $hover-color;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 100%;
+    
+    .modal-content {
+      background: $primary-color;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      width: 50%;
+      color: $text-color;
 
-    p {
-        color: white;
-    }
+      h2 {
+        margin-bottom: 1rem;
+      }
 
-    .projects-container {
+      video {
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: wrap;
+        height: 315px;
+        border-radius: 10px;
+      }
 
-        .project-card {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            width: 30%;
-            margin-bottom: 4%;
+      p {
+        margin-top: 1rem;
+      }
 
-            .card-header {
-                text-align: center;
-                width: 90%;
-                margin-bottom: 20px;
-
-                .img-area {
-                    width: 100%;
-                    margin-bottom: 10px;
-
-                    img {
-                        width: 100%;
-                        border-radius: 20px;
-                    }
-                }
-
-                h2 {
-                    color: $text-color;
-                }
-            }
-
-            .buttons-area {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                width: 100%;
-
-                .more-info {
-                    width: 40%;
-                    color: $text-color;
-                }
-            }
-        }
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+      }
     }
+  }
 }
