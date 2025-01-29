@@ -1,0 +1,72 @@
+$primary-color: #191970;
+$secondary-color: #9cb5ff;
+$hover-color: #191970;
+$text-color: #E0E0E0;
+$bg-body: #12214e;
+$font-primary: "IBM Plex Mono", serif;
+$font-size-title: 2.5rem;
+$font-size-description: 1.5rem;
+$accent-color: #192f70;
+
+.projects-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    p {
+        color: white;
+    }
+
+    .projects-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .project-card {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 30%;
+            margin-bottom: 4%;
+
+            .card-header {
+                text-align: center;
+                width: 90%;
+                margin-bottom: 20px;
+
+                .img-area {
+                    width: 100%;
+                    margin-bottom: 10px;
+
+                    img {
+                        width: 100%;
+                        border-radius: 20px;
+                    }
+                }
+
+                h2 {
+                    color: $text-color;
+                }
+            }
+
+            .buttons-area {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+
+                .more-info {
+                    width: 40%;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
