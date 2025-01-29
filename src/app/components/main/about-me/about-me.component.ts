@@ -108,7 +108,7 @@ export class AboutMeComponent implements OnInit {
         this.technologies = ['RxJS', 'NgRx', 'Typescript'];
         break;
       case 'Spring':
-        this.technologies = ['Spring Security', 'Spring Data', 'Spring Boot', 'Spring Cloud', 'JPA', 'Hibernate', 'RESTful', 'Spring Web', 'Thymeleaf', 'RabbitMQ', 'Kafka'];
+        this.technologies = ['Spring Security', 'Spring Data', 'Spring Boot', 'Spring Cloud', 'JPA', 'Hibernate', 'RESTful', 'Spring Web', 'Thymeleaf', 'RabbitMQ', 'Kafka', 'Swagger'];
         break;
       case 'SCSS':
         this.technologies = ['CSS3', 'BEM'];
