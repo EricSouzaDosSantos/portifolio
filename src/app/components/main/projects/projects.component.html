@@ -1,34 +1,51 @@
 <section class="projects-section">
-    <h1 class="title">Projetos</h1>
-  
-    <section class="projects-container">
-      <section
-        class="project-card"
-        *ngFor="let project of projects"
-      >
-        <div class="card-header">
-          <div class="img-area">
-            <img [src]="project.image" [alt]="project.title" />
-          </div>
-          <h2 class="title-project">{{ project.title }}</h2>
+  <h1 class="title">Projetos</h1>
+
+  <section class="projects-container">
+    <section class="project-card" *ngFor="let project of projects">
+      <div class="card-header">
+        <div class="img-area">
+          <img [src]="project.image" [alt]="project.title" />
         </div>
-  
-        <div class="buttons-area">
-          <button class="more-info">Saber Mais</button>
-          <button class="view" (click)="openModal(project)">Visualizar</button>
-        </div>
-      </section>
+        <h2 class="title-project">{{ project.title }}</h2>
+      </div>
+
+      <div class="buttons-area">
+        <button class="more-info" (click)="openDetails(project)">Saber Mais</button>
+        <button class="view" (click)="openModal(project)">Visualizar</button>
+      </div>
     </section>
-  
-    <div class="modal" *ngIf="selectedProject" (click)="closeModal($event)">
-      <div class="modal-content">
-        <span class="close" (click)="selectedProject = null">&times;</span>
-        <h2>{{ selectedProject.title }}</h2>
-        <video
-          [src]="selectedProject.video"
-        ></video>
-        <p>{{ selectedProject.description }}</p>
+  </section>
+
+  <div class="modal" *ngIf="selectedProject" (click)="closeModal($event)">
+    <div class="modal-content">
+      <span class="close" (click)="selectedProject = null">&times;</span>
+      <h2>{{ selectedProject.title }}</h2>
+      <video controls>
+        <source [src]="selectedProject.video" type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
+      <p>{{ selectedProject.description }}</p>
+    </div>
+  </div>
+
+  <div class="modal" *ngIf="selectedDetails" (click)="closeDetails($event)">
+    <div class="modal-content">
+      <span class="close" (click)="selectedDetails = null">&times;</span>
+      <div class="modal-content-area">
+        <div class="modal-content-img">
+          <img [src]="selectedDetails.image" alt="">
+        </div>
+        <div class="modal-content-description">
+          <h2>{{ selectedDetails.title }}</h2>
+          <h3>Tecnologias Utilizadas</h3>
+          <ul>
+            <li *ngFor="let tech of selectedDetails.technologies">{{ tech }}</li>
+          </ul>
+          <p>{{ selectedDetails.description }}</p>
+          <p><strong>O que fiz:</strong> {{ selectedDetails.whatIDid }}</p>
+        </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
