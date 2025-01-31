@@ -157,9 +157,7 @@ $button-radius: 20px;
 
 
         .home-intro-button {
-            // background-color: $primary-color;
             background: linear-gradient(90deg, $primary-color, $accent-color);
-
             color: $secondary-color;
             width: 90%;
             height: $button-height;
@@ -170,7 +168,7 @@ $button-radius: 20px;
             font-size: 1rem;
             font-weight: 500;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.7s ease;
 
             &:hover {
                 background-color: $hover-color;
