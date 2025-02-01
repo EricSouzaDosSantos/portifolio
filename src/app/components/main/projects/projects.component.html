@@ -10,10 +10,17 @@
         <h2 class="title-project">{{ project.title }}</h2>
       </div>
 
+      <div class="tech-area">
+      <h3>Principais Tecnologias Utilizadas</h3>
+      <ul class="tech-list">
+        <li *ngFor="let tech of project.mainTechnologies">{{ tech }}</li>
+      </ul>
+    </div>
       <div class="buttons-area">
         <button class="more-info" (click)="openDetails(project)">Saber Mais</button>
         <button class="view" (click)="openModal(project)">Visualizar</button>
       </div>
+
     </section>
   </section>
 
@@ -25,6 +32,7 @@
         <source [src]="selectedProject.video" type="video/mp4" />
         Seu navegador não suporta vídeos.
       </video>
+      <h3>Descrição do projeto</h3>
       <p>{{ selectedProject.description }}</p>
     </div>
   </div>
@@ -33,30 +41,26 @@
     <div class="modal-content">
       <span class="close" (click)="selectedDetails = null">&times;</span>
       <div class="modal-content-area">
-        <div class="modal-content-img">
-          <img [src]="selectedDetails.image" alt="">
-          <div class="i-did-desktop">
-            <h3><strong>O que eu fiz:</strong></h3>
-            <ul>
-              <li *ngFor="let did of selectedDetails.whatIDid">{{ did }}</li>
+        <div class="top-content">
+          <div class="modal-content-img">
+            <img [src]="selectedDetails.image" alt="">
+          </div>
+          <div class="modal-content-description">
+            <h2>{{ selectedDetails.title }}</h2>
+            <h3>Tecnologias Utilizadas</h3>
+            <ul class="tech-list">
+              <li *ngFor="let tech of selectedDetails.allTechnologies">{{ tech }}</li>
             </ul>
+            <h3>Descrição</h3>
+            <p>{{ selectedDetails.description }}</p>
           </div>
         </div>
-
-        <div class="modal-content-description">
-          <h2>{{ selectedDetails.title }}</h2>
-          <h3 >Tecnologias Utilizadas</h3>
-          <ul class="tech-list">
-            <li *ngFor="let tech of selectedDetails.technologies">{{ tech }}</li>
+  
+        <div class="i-did">
+          <h3><strong>O que eu fiz:</strong></h3>
+          <ul>
+            <li *ngFor="let did of selectedDetails.whatIDid">{{ did }}</li>
           </ul>
-          <h3>Descrição</h3>
-          <p>{{ selectedDetails.description }}</p>
-          <div class="i-did-mobile">
-            <h3><strong>O que eu fiz:</strong></h3>
-            <ul>
-              <li *ngFor="let did of selectedDetails.whatIDid">{{ did }}</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
