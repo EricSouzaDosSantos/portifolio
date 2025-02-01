@@ -5,6 +5,12 @@ $color-a: #9C9C9C;
 $whatsapp-color: #25D366;
 $linkedin-color: #0077B5;
 $github-color: #333;
+$primary-color: #191970;
+$secondary-color: #9cb5ff;
+$hover-color: #1b1b8a;
+$text-color: #e0e0e0;
+$bg-body: #12214e;
+
 header{
     display: flex;
     justify-content: center;
@@ -35,10 +41,30 @@ li{
     display: flex;
     justify-content: space-between;
     width: 50%;
-    a:hover{
-        color: #fff;
-        transition: color 0.5s ease;   
+    transition: color 0.3s ease;   
+    a:hover {
+      color: $secondary-color;
     }
+  
+    li {
+      transition: transform 1s ease;
+    }
+  
+    li:hover {
+      animation: moveBackAndForth 3s ease infinite alternate;
+    }
+}
+
+@keyframes moveBackAndForth {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.30);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .nav-list.social{
