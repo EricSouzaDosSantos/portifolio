@@ -60,6 +60,13 @@ $badge-border: $accent-color;
         justify-content: center;
         align-items: center;
         position: relative;
+        transition: transform 0.6s ease;
+        cursor: auto;
+
+
+        &:hover {
+            transform: scale(1.06);
+        }
 
         .badge-strap {
             width: 20%;
@@ -210,10 +217,11 @@ $badge-border: $accent-color;
         padding: 2rem;
         border-radius: 16px;
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease;
+        transition: transform 0.6s ease;
+        cursor: auto;
 
         &:hover {
-            transform: scale(1.02);
+            transform: scale(1.07);
         }
 
         .heading {
@@ -414,17 +422,36 @@ $badge-border: $accent-color;
             color: $text-color;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            color: $secondary-color;
+        // ul {
+        //     list-style: none;
+        //     padding: 0;
+        //     margin-bottom: 1.5rem;
+        //     font-size: 1.2rem;
+        //     color: $secondary-color;
 
-            li {
-                margin: 0.5rem 0;
-            }
+        //     li {
+        //         margin: 0.5rem 0;
+        //     }
+        // }
+        ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        padding: 0;
+        margin: 1rem 0;
+        justify-content: center;
+
+        li {
+          list-style: none;
+          background: $secondary-color;
+          color: $primary-color;
+          padding: 0.5rem 1rem;
+          border-radius: 15px;
+          font-size: 0.9rem;
+          font-weight: bold;
+          transition: background 0.3s ease;
         }
+    }
 
         button {
             background: $secondary-color;
