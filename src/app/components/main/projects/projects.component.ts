@@ -15,7 +15,8 @@ export class ProjectsComponent {
       image: '/my-animation.png',
       video: '/fulldev-project.mp4',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      technologies: ['Angular', 'TypeScript', 'SCSS'],
+      alltechnologies: [],
+      mainTechnologies: ['Angular', 'TypeScript', 'SCSS'],
       whatIDid: ['Desenvolvimento da API back-end com Java Spring Boot.', 'Deploy da API na AWS EC2 com configuração de VPC e Security Groups.', 'Configuração de Load Balancer para distribuir o tráfego.', 'Certificação SSL com ACM e domínio gerenciado pelo Route53.', 'Integração da API com o front-end para consumo de dados.', 'Liderança técnica da equipe, garantindo organização e entregas eficazes.'],
     },
     {
@@ -23,7 +24,8 @@ export class ProjectsComponent {
       image: '/my-animation.png',
       video: '/assets/videos/outro-projeto.mp4',
       description: 'Outro projeto demonstrativo com funcionalidades adicionais.',
-      technologies: ['React', 'Firebase', 'TailwindCSS'],
+      allTechnologies: [],
+      mainTechnologies: ['Java', 'Spring'],
       whatIDid: 'Desenvolvi a autenticação e o sistema de armazenamento.',
     },
   ];
