@@ -13,7 +13,7 @@ export class ProjectsComponent {
     {
       title: 'Projeto Teste',
       image: '/my-animation.png',
-      video: '/fulldev-project.mp4',
+      video: '',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       alltechnologies: [],
       mainTechnologies: ['Angular', 'TypeScript', 'SCSS'],
@@ -22,7 +22,7 @@ export class ProjectsComponent {
     {
       title: 'Outro Projeto',
       image: '/my-animation.png',
-      video: '/assets/videos/outro-projeto.mp4',
+      video: '',
       description: 'Outro projeto demonstrativo com funcionalidades adicionais.',
       allTechnologies: [],
       mainTechnologies: ['Java', 'Spring'],
