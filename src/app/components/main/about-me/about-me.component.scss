@@ -1,5 +1,4 @@
 @use 'sass:color';
-@import "@fortawesome/fontawesome-free/css/all.min.css";
 
 $primary-color: #191970;
 $secondary-color: #9cb5ff;
@@ -10,29 +9,8 @@ $font-primary: "IBM Plex Mono", serif;
 $font-size-title: 2.5rem;
 $font-size-description: 1.5rem;
 $accent-color: #192f70;
-
-// $primary-color: #1d3042;
-// $secondary-color: #ffffff;
-// $hover-color: #14202e;
-// $text-color: #e0e0e0;
-// $bg-body: #121d28;
-// $accent-color: #4caf50;
-// $progress-bg: #2e3a48;
-// $font-primary: "IBM Plex Mono", serif;
-// $font-size-title: 2.5rem;
-// $font-size-description: 1.5rem;
-// $badge-shadow: rgba(0, 0, 0, 0.2);
-// $primary-color: #1d3042;
-// $secondary-color: #ffffff;
-// // $accent-color: #4caf50;
-// $hover-color: #14202e;
-// $text-color: #333333;
 $description-bg: #f7f9fc;
 $badge-border: $accent-color;
-// $footer-bg: #1d3042;
-
-
-
 
 .about-me-section {
     display: flex;
@@ -43,17 +21,6 @@ $badge-border: $accent-color;
     gap: 2rem;
     padding: 2rem;
 
-    // &:first-child{
-    //     display: flex;
-    //     align-items: center;
-    // }
-
-    // &:last-child{
-    //     display: flex;
-    //     align-items: start;
-    // }
-
-
     .badge-container {
         width: 100%;
         display: flex;
@@ -62,7 +29,6 @@ $badge-border: $accent-color;
         position: relative;
         transition: transform 0.6s ease;
         cursor: auto;
-
 
         &:hover {
             transform: scale(1.06);
@@ -152,7 +118,6 @@ $badge-border: $accent-color;
             }
 
             .description-area {
-                // margin: 5% auto; 
                 background: linear-gradient(120deg, $primary-color, $secondary-color);
                 padding: 3%;
                 width: 90%;
@@ -171,7 +136,6 @@ $badge-border: $accent-color;
 
                     li {
                         margin-bottom: 0.5rem;
-                        // font-size: 1rem;
                         color: darken($description-bg, 10%);
 
                         strong {
@@ -185,7 +149,6 @@ $badge-border: $accent-color;
                             list-style-type: circle;
 
                             li {
-                                // font-size: 0.95rem;
                                 color: lighten($text-color, 5%);
                             }
                         }
@@ -202,11 +165,11 @@ $badge-border: $accent-color;
                 padding: 0.5rem;
                 text-align: center;
                 border-radius: 0.5rem;
-                transition: background 0.3s;
+                // transition: background 0.3s;
 
-                &:hover {
-                    background: linear-gradient(100deg, $primary-color, $accent-color);
-                }
+                // &:hover {
+                //     // background: linear-gradient(100deg, $primary-color, $accent-color);
+                // }
             }
         }
     }
@@ -239,10 +202,6 @@ $badge-border: $accent-color;
             padding: 1rem;
         }
 
-
-
-
-
         .skill-card {
             background: $secondary-color;
             padding: 1.5rem;
@@ -255,53 +214,6 @@ $badge-border: $accent-color;
                 background: linear-gradient(120deg, $primary-color, $secondary-color);
                 background-size: 250%;
                 animation: move-gradient 3s infinite linear;
-
-                .skill-percentage {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-
-
-                .fab.fa-java {
-                    color: #f89820;
-                }
-
-                .fab.fa-angular {
-                    color: #dd0031;
-                }
-
-                .fab.fa-js {
-                    color: #f7df1e;
-                }
-
-                .fab.fa-sass {
-                    color: #c76395;
-                }
-
-                .fab.fa-html5 {
-                    color: #e34f26;
-                }
-
-                .fab.fa-css3-alt {
-                    color: #264de4;
-                }
-
-                .fab.fa-git {
-                    color: #f1502f;
-                }
-
-                .fa-solid.fa-leaf {
-                    color: $accent-color;
-                }
-
-                .fab.fa-aws {
-                    color: #ff9900;
-                }
-
-                .fab.fa-github {
-                    color: #211f1f;
-                }
             }
 
             .skill-info {
@@ -313,9 +225,7 @@ $badge-border: $accent-color;
 
                 i {
                     font-size: 2.2rem;
-                    // color: $primary-color;
                     color: lighten($accent-color, 10%);
-
                     transition: color 0.3s ease;
                 }
             }
@@ -363,8 +273,6 @@ $badge-border: $accent-color;
                 opacity: 0;
                 transition: opacity 1s ease, transform 1s ease;
               }
-
-
         }
 
         @keyframes move-gradient {
@@ -422,17 +330,6 @@ $badge-border: $accent-color;
             color: $text-color;
         }
 
-        // ul {
-        //     list-style: none;
-        //     padding: 0;
-        //     margin-bottom: 1.5rem;
-        //     font-size: 1.2rem;
-        //     color: $secondary-color;
-
-        //     li {
-        //         margin: 0.5rem 0;
-        //     }
-        // }
         ul{
         display: flex;
         flex-wrap: wrap;
@@ -484,16 +381,14 @@ $badge-border: $accent-color;
 
 @media (max-width: 1300px) {
     .about-me-section {
-        //   gap: 1.5rem;
-        //   padding: 1.5rem;
 
         .badge-container {
+
             .badge {
                 flex-direction: row;
                 align-items: start;
                 width: 100%;
                 gap: 1rem;
-
 
                 .badge-header {
                     display: flex;
@@ -557,8 +452,6 @@ $badge-border: $accent-color;
 
 @media (max-width: 1000px) {
     .about-me-section {
-        //   gap: 1.5rem;
-        //   padding: 1.5rem;
 
         .badge-container {
             .badge {
@@ -674,12 +567,7 @@ $badge-border: $accent-color;
                 .description-area {
                     font-size: 0.9rem;
                     width: 100%;
-
-                    // .highlights {
-                    //     display: none;
-                    // }
                 }
-
             }
         }
 
@@ -702,12 +590,12 @@ $badge-border: $accent-color;
                 padding: 15px;
 
                 .skill-info {
-                    font-size: 1rem;
+                    font-size: 1.2rem;
                     width: 100%;
                     text-align: center;
 
                     i {
-                        font-size: 1.3rem;
+                        font-size: 2rem;
                     }
                 }
 
