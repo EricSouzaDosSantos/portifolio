@@ -3,7 +3,6 @@ $secondary-color: #9cb5ff;
 $hover-color: #1b1b8a;
 $text-color: #e0e0e0;
 $bg-body: #12214e;
-$font-primary: "IBM Plex Mono", serif;
 
 .projects-section {
   display: flex;
@@ -18,14 +17,6 @@ $font-primary: "IBM Plex Mono", serif;
     color: $text-color;
     margin-bottom: 2rem;
     text-align: center;
-
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.5rem;
-    }
   }
 
   .projects-container {
@@ -49,7 +40,6 @@ $font-primary: "IBM Plex Mono", serif;
 
       &:hover {
         transform: scale(1.10);
-
         &::before,
         &::after {
           content: '';
@@ -94,10 +84,6 @@ $font-primary: "IBM Plex Mono", serif;
           color: $text-color;
           margin-top: 1rem;
           font-size: 1.5rem;
-
-          @media (max-width: 480px) {
-            font-size: 1.2rem;
-          }
         }
       }
 
@@ -116,11 +102,6 @@ $font-primary: "IBM Plex Mono", serif;
           transition: 0.3s;
           border-radius: 8px;
 
-          @media (max-width: 480px) {
-            padding: 0.6rem 1rem;
-            font-size: 0.9rem;
-          }
-
           &:hover {
             background: $hover-color;
             color: white;
@@ -135,9 +116,6 @@ $font-primary: "IBM Plex Mono", serif;
         margin-bottom: 2rem;
         color: $secondary-color;
 
-        @media (max-width: 480px) {
-          font-size: 1rem;
-        }
         .tech-list {
           display: flex;
           flex-wrap: wrap;
@@ -158,11 +136,6 @@ $font-primary: "IBM Plex Mono", serif;
             transition: background 0.3s ease;
             user-select: none;
             cursor: auto;
-
-            @media (max-width: 768px) {
-              padding: 0.4rem 0.8rem;
-              font-size: 0.8rem;
-            }
 
             &:hover {
               background: darken($secondary-color, 10%);
@@ -203,9 +176,6 @@ $font-primary: "IBM Plex Mono", serif;
         margin-bottom: 1rem;
         color: $secondary-color;
 
-        @media (max-width: 480px) {
-          font-size: 1rem;
-        }
       }
 
       video {
@@ -215,23 +185,7 @@ $font-primary: "IBM Plex Mono", serif;
         margin-bottom: 10px;
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
 
-
-        @media (max-width: 768px) {
-          width: 100%;
-        }
       }
-
-      @media (max-width: 768px) {
-        width: 80%;
-        // padding: 1.5rem;
-      }
-
-      @media (max-width: 480px) {
-        width: 90%;
-        // padding: 1rem;
-      }
-
-
 
       .modal-content-area {
         display: flex;
@@ -241,37 +195,14 @@ $font-primary: "IBM Plex Mono", serif;
         gap: 2rem;
         width: 100%;
 
-        @media (max-width: 1300px) {
-          flex-direction: column;
-          align-items: center;
-          margin-top: 5%;
-          gap: 1rem;
-        }
-
         .top-content {
           display: flex;
           flex-direction: row;
           gap: 2rem;
 
-          @media (max-width: 1300px) {
-            flex-direction: column;
-            align-items: center;
-            // margin-top: 13%;
-            gap: 1.5rem;
-          }
-
           .modal-content-img {
             width: 50%;
             align-items: stretch;
-
-
-            @media (max-width: 1300px) {
-              width: 80%;
-            }
-
-            @media (max-width: 768px) {
-              width: 100%;
-            }
 
             img {
               width: 100%;
@@ -285,36 +216,16 @@ $font-primary: "IBM Plex Mono", serif;
             align-items: stretch;
             text-align: left;
 
-
-
-            @media (max-width: 1300px) {
-              width: 90%;
-              text-align: center;
-            }
-
             h2 {
               font-size: 2rem;
               margin-bottom: 1.5rem;
               color: $secondary-color;
-
-              @media (max-width: 768px) {
-                font-size: 1.8rem;
-              }
-
-              @media (max-width: 480px) {
-                font-size: 1.5rem;
-              }
             }
 
             h3 {
               font-size: 1.2rem;
               margin-bottom: 1rem;
               color: $secondary-color;
-
-              @media (max-width: 768px) {
-                font-size: 1.3rem;
-                margin: 1.5rem;
-              }
             }
 
             .tech-list {
@@ -339,11 +250,6 @@ $font-primary: "IBM Plex Mono", serif;
                 margin-top: 1rem;
                 cursor: auto;
 
-                @media (max-width: 768px) {
-                  padding: 0.4rem 0.8rem;
-                  font-size: 0.8rem;
-                }
-
                 &:hover {
                   background: darken($secondary-color, 10%);
                 }
@@ -354,11 +260,6 @@ $font-primary: "IBM Plex Mono", serif;
               margin-top: 1rem;
               line-height: 1.6;
               font-size: 1rem;
-
-              @media (max-width: 768px) {
-                font-size: 0.9rem;
-                text-align: justify;
-              }
             }
 
             strong {
@@ -369,11 +270,6 @@ $font-primary: "IBM Plex Mono", serif;
 
         .i-did {
           width: 100%;
-          // // display: none; 
-
-          // @media (max-width: 768px) {
-          //   display: block;
-          // }
 
           h3 {
             color: $secondary-color;
@@ -406,12 +302,6 @@ $font-primary: "IBM Plex Mono", serif;
         color: white;
         transition: color 0.3s ease;
 
-        @media (max-width: 480px) {
-          top: 10px;
-          right: 15px;
-          font-size: 2.5rem;
-        }
-
         &:hover {
           color: $secondary-color;
         }
@@ -420,7 +310,6 @@ $font-primary: "IBM Plex Mono", serif;
   }
 }
 
-
 @keyframes border {
   from {
     transform: rotate(0deg);
@@ -428,5 +317,172 @@ $font-primary: "IBM Plex Mono", serif;
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1300px) {
+
+  .projects-section {
+
+    .modal {
+  
+      .modal-content {
+
+        .modal-content-area {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 5%;
+            gap: 1rem;
+  
+          .top-content {
+              flex-direction: column;
+              align-items: center;
+              gap: 1.5rem;
+  
+            .modal-content-img {
+                width: 80%;
+            }
+
+            .modal-content-description {
+                width: 90%;
+                text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .projects-section {
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .projects-container {
+
+      .project-card {
+
+        .tech-area {
+
+          .tech-list {
+
+            li {
+              padding: 0.4rem 0.8rem;
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+    .modal {
+  
+      .modal-content {
+        width: 80%;
+  
+        video {
+            width: 100%;
+        }
+
+        .modal-content-area {
+  
+          .top-content {
+  
+            .modal-content-img {
+                width: 100%;
+            }
+
+            .modal-content-description {
+  
+              h2 {
+                  font-size: 1.8rem;
+              }
+  
+              h3 {
+                  font-size: 1.3rem;
+                  margin: 1.5rem;
+              }
+  
+              .tech-list {
+  
+                li {
+                    padding: 0.4rem 0.8rem;
+                    font-size: 0.8rem;
+                }
+              }
+  
+              p {
+                  font-size: 0.9rem;
+                  text-align: justify;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+
+  .projects-section {
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .projects-container {
+
+      .project-card {
+
+
+        .card-header {
+
+          h2 {
+            font-size: 1.2rem;
+
+          }
+        }
+
+        .buttons-area {
+
+          button {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+          }
+        }
+
+        .tech-area {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .modal {
+  
+      .modal-content {
+        width: 90%;
+  
+        h3 {
+            font-size: 1rem;
+        }
+
+        .modal-content-description {
+
+          h2 {
+              font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .close {
+        top: 10px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
   }
 }
