@@ -1,37 +1,35 @@
 <header>
-    <nav class="navigation" [ngStyle]="{'border-radius': borderRadius}">
-      
-      <button class="hamburger" (click)="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-  
-      <ul class="nav-list" [class.active]="menuOpen">
-        <li><a href="">Home</a></li>
-        <li><a href="">Sobre mim</a></li>
-        <li><a href="">Projetos</a></li>
-        <li><a href="">Contato</a></li>
-      </ul>
-  
-      <ul class="nav-list social">
-        <li>
-          <a href="https://www.linkedin.com/in/dev-eric" target="_blank">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/EricSouzaDosSantos" target="_blank">
-            <i class="fab fa-github"></i>
-            
-          </a>
-        </li>
-        <li>
-          <a href="https://wa.me/11960703544" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  
+  <nav class="navigation" [ngStyle]="{'border-radius': borderRadius}">
+
+    <button class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-list" [class.active]="menuOpen">
+      <li><a href="">Home</a></li>
+      <li><a href="">Sobre mim</a></li>
+      <li><a href="">Projetos</a></li>
+      <li><a href="">Contato</a></li>
+    </ul>
+
+    <ul class="nav-list social">
+      <li>
+        <a href="https://www.linkedin.com/in/dev-eric" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/EricSouzaDosSantos" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://wa.me/11960703544" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
