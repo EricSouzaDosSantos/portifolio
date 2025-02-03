@@ -1,9 +1,9 @@
 {
     "build": {
       "env": {
-        "EMAILJS_SERVICE_ID": "emailjs_service_id",
-        "EMAILJS_TEMPLATE_ID": "emailjs_template_id",
-        "EMAILJS_USER_ID": "emailjs_user_id"
+        "EMAILJS_SERVICE_ID": "@emailjs_service_id",
+        "EMAILJS_TEMPLATE_ID": "@emailjs_template_id",
+        "EMAILJS_USER_ID": "@emailjs_user_id"
       }
     }
   }
