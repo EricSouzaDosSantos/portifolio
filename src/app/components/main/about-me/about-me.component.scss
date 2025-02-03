@@ -272,7 +272,7 @@ $badge-border: $accent-color;
                 color: $primary-color;
                 opacity: 0;
                 transition: opacity 1s ease, transform 1s ease;
-              }
+            }
         }
 
         @keyframes move-gradient {
@@ -330,25 +330,25 @@ $badge-border: $accent-color;
             color: $text-color;
         }
 
-        ul{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.7rem;
-        padding: 0;
-        margin: 1rem 0;
-        justify-content: center;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            padding: 0;
+            margin: 1rem 0;
+            justify-content: center;
 
-        li {
-          list-style: none;
-          background: $secondary-color;
-          color: $primary-color;
-          padding: 0.5rem 1rem;
-          border-radius: 15px;
-          font-size: 0.9rem;
-          font-weight: bold;
-          transition: background 0.3s ease;
+            li {
+                list-style: none;
+                background: $secondary-color;
+                color: $primary-color;
+                padding: 0.5rem 1rem;
+                border-radius: 15px;
+                font-size: 0.9rem;
+                font-weight: bold;
+                transition: background 0.3s ease;
+            }
         }
-    }
 
         button {
             background: $secondary-color;
@@ -551,27 +551,31 @@ $badge-border: $accent-color;
 
                     .info-area {
                         h1 {
-                            font-size: 100%;
+                            font-size: 120%;
                         }
 
                         h2 {
-                            font-size: 90%;
+                            font-size: 110%;
                         }
 
                         p {
-                            font-size: 85%;
+                            margin-top: 15px;
+                            padding: 0px;
+                            font-size: 100%;
                         }
                     }
                 }
 
                 .description-area {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
+                    padding: 15px;
                     width: 100%;
                 }
             }
         }
 
         .skills-section {
+            margin-top: 10%;
             width: 100%;
             padding: 0;
 
@@ -582,25 +586,29 @@ $badge-border: $accent-color;
             .skills-container {
                 width: 100%;
                 height: 100%;
-                grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-                gap: 0.5rem;
-            }
+                grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+                gap: 1.5rem;
 
-            .skill-card {
-                padding: 15px;
+                .skill-card {
+                    padding: 15px;
 
-                .skill-info {
-                    font-size: 1.2rem;
-                    width: 100%;
-                    text-align: center;
+                    .skill-info {
 
-                    i {
-                        font-size: 2rem;
+                        font-size: 1.3rem;
+                        width: 100%;
+
+                        .skill-name {
+                            margin: 0;
+
+                            i {
+                                font-size: 2.5rem;
+                            }
+                        }
                     }
-                }
 
-                .progress-bar {
-                    width: 100%;
+                    .progress-bar {
+                        width: 100%;
+                    }
                 }
             }
         }
