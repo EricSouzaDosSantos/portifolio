@@ -14,7 +14,7 @@ $bg-body: #12214e;
 
   .title {
     font-size: 2.5rem;
-    color: $text-color;
+    color: $secondary-color;
     margin-bottom: 2rem;
     text-align: center;
   }
@@ -358,10 +358,6 @@ $bg-body: #12214e;
 
   .projects-section {
 
-    .title {
-      font-size: 2rem;
-    }
-
     .projects-container {
 
       .project-card {
@@ -430,9 +426,6 @@ $bg-body: #12214e;
 
   .projects-section {
 
-    .title {
-      font-size: 1.5rem;
-    }
 
     .projects-container {
 
