@@ -3,7 +3,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
-import { environment } from './../../../../environment/environment.prod';
+import { environment } from '../../../../environments/environment';
 
 
 @Component({
@@ -19,6 +19,8 @@ export class ContactMeComponent {
     email: '',
     message: '',
   };
+
+  environment = environment;
 
   isSending = false;
   isSuccess = false;
