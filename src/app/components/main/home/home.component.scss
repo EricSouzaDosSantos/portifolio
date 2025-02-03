@@ -249,7 +249,7 @@ $button-radius: 20px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 80%;
+                width: 100%;
 
                 .photo {
                     display: flex;
@@ -258,7 +258,7 @@ $button-radius: 20px;
                 }
 
                 img {
-                    max-width: 75%;
+                    max-width: 95%;
                     border-radius: 50%;
                 }
             }
