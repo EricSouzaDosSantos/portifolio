@@ -3,7 +3,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
-import { environment } from './../../../../environment/environment.prod'; 
+import { environment } from './../../../../environment/environment.prod';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class ContactMeComponent {
   isSuccess = false;
   isError = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   onSubmit() {
     this.isSending = true;
@@ -36,25 +36,26 @@ export class ContactMeComponent {
       message: `Olá Eric,\n
     eu me chamo ${this.formData.name},\n
      ${this.formData.message} \n
-    meu email para contato: ${this.formData.email}`};
-    
-  
+    meu email para contato: ${this.formData.email}`
+    };
+
+
     emailjs.send(
       environment.emailjs.service_id,
       environment.emailjs.template_id,
       messageFormat,
       environment.emailjs.user_id
-    )      .then(
-        (response) => {
-          this.isSending = false;
-          this.isSuccess = true;
-          this.resetForm();
-        },
-        (error) => {
-          this.isSending = false;
-          this.isError = true;
-        }
-      );
+    ).then(
+      (response) => {
+        this.isSending = false;
+        this.isSuccess = true;
+        this.resetForm();
+      },
+      (error) => {
+        this.isSending = false;
+        this.isError = true;
+      }
+    );
   }
 
   resetForm() {
