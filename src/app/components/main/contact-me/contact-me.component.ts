@@ -33,9 +33,6 @@ export class ContactMeComponent {
     this.isSuccess = false;
     this.isError = false;
 
-    console.log(environment.emailjs.EMAILJS_SERVICE_ID)
-
-
     const messageFormat = {
       name: this.formData.name,
       message: `Olá Eric,\n
