@@ -10,12 +10,12 @@ const envFile = `export const environment = {
     EMAILJS_USER_ID: ' ${process.env. EMAILJS_USER_ID} ', 
 }; 
 ` ; 
-const targetPath = path. join (__dirname, './src/environments/environment.development.ts' ); 
+const targetPath = path. join (__dirname, './src/environments/environment.prod.ts' ); 
 fs. writeFile (targetPath, envFile, ( err ) => { 
     if (err) { 
         console . error (err); 
         throw err; 
     } else { 
-        console . log (successColor, ` ${checkSign} Environment.development.ts gerado com sucesso` ); 
+        console . log (successColor, ` ${checkSign} Environment.prod.ts gerado com sucesso` ); 
     } 
 });

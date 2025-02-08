@@ -33,7 +33,7 @@ export class ContactMeComponent {
     this.isSuccess = false;
     this.isError = false;
 
-    console.log(environment.emailjs.service_id)
+    console.log(environment.emailjs.EMAILJS_SERVICE_ID)
 
 
     const messageFormat = {
@@ -47,10 +47,10 @@ export class ContactMeComponent {
 
 
     emailjs.send(
-      environment.emailjs.service_id,
-      environment.emailjs.template_id,
+      environment.emailjs.EMAILJS_SERVICE_ID,
+      environment.emailjs.EMAILJS_TEMPLATE_ID,
       messageFormat,
-      environment.emailjs.user_id
+      environment.emailjs.EMAILJS_USER_ID
     ).then(
       (response) => {
         this.isSending = false;
