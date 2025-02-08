@@ -55,6 +55,7 @@ export class ContactMeComponent {
         this.resetForm();
       },
       (error) => {
+        console.log(error)
         this.isSending = false;
         this.isError = true;
       }
