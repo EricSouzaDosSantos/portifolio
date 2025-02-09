@@ -1,59 +1,55 @@
-# Portifolio
+# Meu Portfólio - Angular 🚀
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+Bem-vindo ao repositório do meu portfólio pessoal, desenvolvido com **Angular**, **SCSS** e **TypeScript**! Este projeto tem como objetivo apresentar meus conhecimentos, projetos e formas de contato de maneira interativa e moderna.
 
-## Development server
+## 📌 Funcionalidades
+- 🌐 Navegação dinâmica entre seções (Home, About Me, Projects e Contact Me)
+- 🎨 Design responsivo e estilizado com **SCSS**
+- 🖥️ Exibição de projetos com modal interativo
+- 📧 Formulário de contato funcional
+- 🔗 Links para redes sociais e repositórios
 
-To start a local development server, run:
+## 🛠️ Tecnologias Utilizadas
+- **Angular**
+- **TypeScript**
+- **SCSS**
+- **HTML Semântico**
 
-```bash
-ng serve
+## 🚀 Como Executar o Projeto
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/EricSouzaDosSantos/portifolio.git
+   ```
+2. Acesse a pasta do projeto:
+   ```bash
+   cd meu-portifolio
+   ```
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
+4. Execute o servidor de desenvolvimento:
+   ```bash
+   ng serve
+   ```
+5. Acesse no navegador:
+   ```
+   http://localhost:4200
+   ```
+
+## 📂 Estrutura do Projeto
+```
+📁 src/
+ ┣ 📂 app/
+ ┃ ┣ 📂 components/   # Componentes reutilizáveis
+ ┃ ┗ app.module.ts   # Módulo principal
+ ┗ index.html        # Página inicial
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📩 Contato
+Caso queira entrar em contato comigo, você pode acessar meu portfólio através de **[https://portifolio-sooty-tau.vercel.app/](#)** ou me encontrar nas redes sociais abaixo:
+- **LinkedIn**: [https://www.linkedin.com/in/dev-eric](#)
+- **GitHub**: [https://github.com/EricSouzaDosSantos/](#)
+- **Email**: ericsouzadossantos28@gmail.com
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
