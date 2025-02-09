@@ -1,21 +1,21 @@
-# Meu Portfólio - Angular 🚀
+# Meu Portfólio - Angular 
 
 Bem-vindo ao repositório do meu portfólio pessoal, desenvolvido com **Angular**, **SCSS** e **TypeScript**! Este projeto tem como objetivo apresentar meus conhecimentos, projetos e formas de contato de maneira interativa e moderna.
 
-## 📌 Funcionalidades
-- 🌐 Navegação dinâmica entre seções (Home, About Me, Projects e Contact Me)
-- 🎨 Design responsivo e estilizado com **SCSS**
-- 🖥️ Exibição de projetos com modal interativo
-- 📧 Formulário de contato funcional
-- 🔗 Links para redes sociais e repositórios
+## Funcionalidades
+- Navegação dinâmica entre seções (Home, About Me, Projects e Contact Me)
+- Design responsivo e estilizado com **SCSS**
+- Exibição de projetos com modal interativo
+- Formulário de contato funcional
+- Links para redes sociais e repositórios
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - **Angular**
 - **TypeScript**
 - **SCSS**
 - **HTML Semântico**
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 1. Clone este repositório:
    ```bash
    git clone https://github.com/EricSouzaDosSantos/portifolio.git
@@ -46,7 +46,7 @@ Bem-vindo ao repositório do meu portfólio pessoal, desenvolvido com **Angular*
  ┗ index.html        # Página inicial
 ```
 
-## 📩 Contato
+## Contato
 Caso queira entrar em contato comigo, você pode acessar meu portfólio através de **[https://portifolio-sooty-tau.vercel.app/](#)** ou me encontrar nas redes sociais abaixo:
 - **LinkedIn**: [https://www.linkedin.com/in/dev-eric](#)
 - **GitHub**: [https://github.com/EricSouzaDosSantos/](#)
