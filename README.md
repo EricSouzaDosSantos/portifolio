@@ -22,7 +22,7 @@ Bem-vindo ao repositório do meu portfólio pessoal, desenvolvido com **Angular*
    ```
 2. Acesse a pasta do projeto:
    ```bash
-   cd meu-portifolio
+   cd portifolio
    ```
 3. Instale as dependências:
    ```bash
