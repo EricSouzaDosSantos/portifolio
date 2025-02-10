@@ -1,6 +1,5 @@
 <header>
   <nav class="navigation" [ngStyle]="{'border-radius': borderRadius}">
-
     <button class="hamburger" (click)="toggleMenu()">
       <span></span>
       <span></span>
@@ -8,10 +7,10 @@
     </button>
 
     <ul class="nav-list" [class.active]="menuOpen">
-      <li><a href="">Home</a></li>
-      <li><a href="">Sobre mim</a></li>
-      <li><a href="">Projetos</a></li>
-      <li><a href="">Contato</a></li>
+      <li><a href="#home" (click)="scrollToSection('home')">Home</a></li>
+      <li><a href="#about-me" (click)="scrollToSection('about-me')">Sobre mim</a></li>
+      <li><a href="#projects" (click)="scrollToSection('projects')">Projetos</a></li>
+      <li><a href="#contact" (click)="scrollToSection('contact')">Contato</a></li>
     </ul>
 
     <ul class="nav-list social">

@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class ContactMeComponent {
   iconDetails = [
     {
-      ref: 'mailto:seuemail@example.com',
+      ref: 'mailto:ericsouzadossantos28@gmail.com',
       classIcon: 'fas fa-envelope',
       classHover: 'fab fa-envelope fa-shake',
       iconName: 'E-mail',
