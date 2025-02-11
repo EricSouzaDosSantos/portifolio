@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-projects',
@@ -8,12 +10,15 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
+  selectedDetails: any = null;
+  safeUrl!: SafeResourceUrl;
+  selectedProject: any = null;
 
   projects = [
     {
       title: 'Projeto Teste',
       image: '/my-animation.png',
-      video: '',
+      videoId: 'VCJ45dH0aOs',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       alltechnologies: [],
       mainTechnologies: ['Angular', 'TypeScript', 'SCSS'],
@@ -22,7 +27,7 @@ export class ProjectsComponent {
     {
       title: 'projeto',
       image: '/my-animation.png',
-      video: '',
+      videoId: 'VCJ45dH0aOs',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       allTechnologies: [],
       mainTechnologies: ['Java', 'Spring'],
@@ -30,13 +35,18 @@ export class ProjectsComponent {
     },
   ];
 
-  selectedProject: any = null;
-  selectedDetails: any = null;
+ 
+  constructor(private sanitizer: DomSanitizer) {}
 
   openModal(project: any) {
-    this.selectedProject = project;
+    this.selectedProject = {
+      ...project,
+      safeUrl: this.sanitizer.bypassSecurityTrustResourceUrl(
+        `https://www.youtube.com/embed/${project.videoId}`
+      ),
+    };
   }
-
+  
   closeModal(event: Event) {
     if ((event.target as HTMLElement).classList.contains('modal')) {
       this.selectedProject = null;
