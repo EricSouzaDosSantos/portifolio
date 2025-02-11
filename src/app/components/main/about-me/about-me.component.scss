@@ -1,4 +1,6 @@
 @use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
 
 $primary-color: #191970;
 $secondary-color: #9cb5ff;
@@ -123,7 +125,8 @@ $badge-border: $accent-color;
                 width: 90%;
                 height: auto;
                 border-radius: 1rem;
-                font-size: 1.3rem;
+                font-size: 1rem;
+                font-family: $font-primary;
                 color: #e0e0e0;
                 text-align: justify;
                 line-height: 1.5;
@@ -453,6 +456,8 @@ $badge-border: $accent-color;
 @media (max-width: 1000px) {
     .about-me-section {
 
+        margin-top: 10%;
+
         .badge-container {
             .badge {
                 flex-direction: column;
@@ -526,7 +531,7 @@ $badge-border: $accent-color;
 
             .badge-strap {
                 width: 50%;
-                height: 2.5%;
+                height: 2%;
                 background: $accent-color;
                 border-radius: 1rem;
                 position: absolute;
@@ -568,6 +573,114 @@ $badge-border: $accent-color;
 
                 .description-area {
                     font-size: 1rem;
+                    padding: 15px;
+                    width: 100%;
+                }
+            }
+        }
+
+        .skills-section {
+            margin-top: 10%;
+            width: 100%;
+            padding: 0;
+
+            .heading {
+                padding: 15px;
+            }
+
+            .skills-container {
+                width: 100%;
+                height: 100%;
+                grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+                gap: 1.5rem;
+
+                .skill-card {
+                    padding: 15px;
+
+                    .skill-info {
+
+                        font-size: 1.3rem;
+                        width: 100%;
+
+                        .skill-name {
+                            margin: 0;
+
+                            i {
+                                font-size: 2.5rem;
+                            }
+                        }
+                    }
+
+                    .progress-bar {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .about-me-section {
+        width: 100%;
+        margin-top: 40%;
+        margin-bottom: 10%;
+        padding: 1rem;
+        gap: 1rem;
+
+        .badge-container {
+            width: 100%;
+
+            &:hover {
+                margin-top: 10%;
+                transform: scale(1.06);
+
+            }
+
+            .badge-strap {
+                width: 50%;
+                height: 2%;
+                background: $accent-color;
+                border-radius: 1rem;
+                position: absolute;
+                top: -4%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .badge {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                border-radius: 20px;
+
+                .badge-header {
+                    width: 90%;
+
+                    .photo-area {
+                        width: 70%;
+                    }
+
+                    .info-area {
+                        h1 {
+                            font-size: 120%;
+                        }
+
+                        h2 {
+                            font-size: 110%;
+                        }
+
+                        p {
+                            margin-top: 15px;
+                            padding: 0px;
+                            font-size: 100%;
+                        }
+                    }
+                }
+
+                .description-area {
+                    font-size: 0.9rem;
                     padding: 15px;
                     width: 100%;
                 }
