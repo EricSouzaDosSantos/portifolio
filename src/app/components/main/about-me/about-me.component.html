@@ -1,5 +1,5 @@
 <section class="about-me-section" id="about-me">
-  <section class="badge-container">
+  <section [ngClass]="{'badge-container': true, 'visible': isBadgeVisible}">>
     <div class="badge-strap"></div>
     <div class="badge">
       <div class="badge-header">
@@ -41,7 +41,7 @@
     </div>
   </section>
 
-  <section class="skills-section" id="skills">
+  <section class="skills-section" [ngClass]="{'visible': isSkillsVisible}" id="skills">
     <h2 class="heading">Stack Principal</h2>
     <div class="skills-container">
       <div class="skill-card" *ngFor="let skill of skills; let i = index" (click)="openModal(skill.name)"

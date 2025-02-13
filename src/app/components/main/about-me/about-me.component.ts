@@ -10,6 +10,7 @@ import { NgStyle, NgClass, CommonModule } from '@angular/common';
 })
 export class AboutMeComponent implements OnInit {
   isBadgeVisible = false;
+  isSkillsVisible = false;
   lastScrollTop = 0;
   isModalVisible = false;
   selectedSkill = '';
@@ -53,50 +54,38 @@ export class AboutMeComponent implements OnInit {
       this.showHighlights = !this.showHighlights;
     }
   }
-  
-  // getProgressStyle(progress: number): any {
-  //   return {
-  //     width: `${progress}%`,
-  //     animation: 'fill-bar 1.5s ease forwards',
-  //   };
-  // }
 
   constructor(private el: ElementRef) {}
-  // ngOnInit(): void {
-  //   throw new Error('Method not implemented.');
-  // }
 
   @HostListener('window:scroll', [])
-  onScroll(): void {
-    if (typeof window === 'undefined') return;
+onScroll(): void {
+  if (typeof window === 'undefined') return;
 
-    const badgeElement = this.el.nativeElement.querySelector('.badge-container');
-    const skillsSection = this.el.nativeElement.querySelector('.skills-section');
-    const screenHeight = window.innerHeight;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const badgeElement = this.el.nativeElement.querySelector('.badge-container');
+  const skillsSection = this.el.nativeElement.querySelector('.skills-section');
+  const screenHeight = window.innerHeight;
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > this.lastScrollTop) {
-      if (badgeElement) {
-        const badgePosition = badgeElement.getBoundingClientRect().top;
-        if (badgePosition < screenHeight) {
-          this.isBadgeVisible = true;
-        }
-      }
-    } else {
-      if (badgeElement && badgeElement.classList.contains('visible')) {
-        this.isBadgeVisible = false;
-      }
+  if (badgeElement) {
+    const badgePosition = badgeElement.getBoundingClientRect().top;
+    if (badgePosition < screenHeight * 0.8) {
+      this.isBadgeVisible = true;
+    } else if (scrollTop < this.lastScrollTop) {
+      this.isBadgeVisible = false;
     }
-
-    if (skillsSection) {
-      const skillsPosition = skillsSection.getBoundingClientRect().top;
-      if (skillsPosition < screenHeight) {
-        skillsSection.classList.add('visible');
-      }
-    }
-
-    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
+
+  if (skillsSection) {
+    const skillsPosition = skillsSection.getBoundingClientRect().top;
+    if (skillsPosition < screenHeight * 0.8) {
+      this.isSkillsVisible = true;
+    } else if (scrollTop < this.lastScrollTop) { 
+      this.isSkillsVisible = false;
+    }
+  }
+
+  this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+}
 
   openModal(skill: string): void {
     this.selectedSkill = skill;
@@ -108,10 +97,10 @@ export class AboutMeComponent implements OnInit {
         this.technologies = ['RxJS', 'NgRx', 'Typescript'];
         break;
       case 'Spring':
-        this.technologies = ['Spring Security', 'Spring Data', 'Spring Boot', 'Spring Cloud', 'JPA', 'Hibernate', 'RESTful', 'Spring Web', 'Thymeleaf', 'RabbitMQ', 'Kafka', 'Swagger'];
+        this.technologies = ['Spring Security', 'Spring Data', 'Spring Boot', 'Spring Cloud', 'JPA', 'Hibernate', 'RESTful', 'Spring Web', 'Thymeleaf', 'Kafka', 'Swagger'];
         break;
       case 'SCSS':
-        this.technologies = ['CSS3', 'BEM'];
+        this.technologies = ['CSS3'];
         break;
       case 'Git':
         this.technologies = ['GitHub', 'Conventional Commits'];
