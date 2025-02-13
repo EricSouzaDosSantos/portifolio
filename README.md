@@ -1,6 +1,6 @@
 # Meu Portfólio - Angular 
 
-Bem-vindo ao repositório do meu portfólio pessoal, desenvolvido com **Angular**, **SCSS** e **TypeScript**! Este projeto tem como objetivo apresentar meus conhecimentos, projetos e formas de contato de maneira interativa e moderna.
+Bem-vindo ao repositório do meu portfólio pessoal, desenvolvido com **Angular**, **SCSS** e **TypeScript**! Este projeto tem como objetivo apresentar meus conhecimentos, projetos e formas de entrar em contato comigo.
 
 ## Funcionalidades
 - Navegação dinâmica entre seções (Home, About Me, Projects e Contact Me)
