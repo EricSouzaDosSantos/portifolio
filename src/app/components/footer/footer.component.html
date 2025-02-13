@@ -1,1 +1,23 @@
-<p>footer works!</p>
+<footer class="footer">
+
+    <div class="footer-content">
+        <p class="copyright">&copy; 2025 - Eric Souza. Todos os direitos reservados.</p>
+        <p class="contact">Entre em contato: <a href="mailto:ericsouzadossantos28@gmail.com">{{gmail}}</a></p>
+    </div>
+
+    <nav class="footer-nav">
+        <ul class="nav-list">
+            <li><a href="#home" (click)="scrollToSection('home')">Home</a></li>
+            <li><a href="#about-me" (click)="scrollToSection('about-me')">Sobre mim</a></li>
+            <li><a href="#projects" (click)="scrollToSection('projects')">Projetos</a></li>
+            <li><a href="#contact" (click)="scrollToSection('contact')">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div class="social-links">
+        <a href="https://wa.me/11960703544" target="_blank" class="social-link whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/dev-eric" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/EricSouzaDosSantos" target="_blank" class="social-link github"><i class="fab fa-github"></i></a>
+    </div>
+
+</footer>
