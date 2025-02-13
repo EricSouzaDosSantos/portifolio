@@ -14,7 +14,7 @@ export class HomeComponent {
     const link = document.createElement('a');
     link.href = '/Eric-Souza-Dos-Santos-Curriculo.pdf'
 
-    link.download = 'Curriculo-Do-Eric.pdf'
+    link.download = 'Curriculo-Eric-Souza.pdf'
 
     link.click()
   }
