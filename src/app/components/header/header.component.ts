@@ -20,7 +20,7 @@ export class HeaderComponent {
   scrollToSection(sectionId: string): void {
     const section = document.getElementById(sectionId);
     if (section) {
-      const yOffset = -80; // Ajusta a posição para suavização
+      const yOffset = -80;
       const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({
         top: y,
@@ -29,7 +29,7 @@ export class HeaderComponent {
     }
     setTimeout(() => {
       this.menuOpen = false;
-    }, 500); // Aguarda a animação antes de fechar o menu
+    }, 500);
   }
 
   @HostListener('window:scroll', [])
