@@ -1,12 +1,11 @@
 # Meu Portfólio - Angular 
 
-Bem-vindo ao repositório do meu portfólio pessoal, desenvolvido com **Angular**, **SCSS** e **TypeScript**! Este projeto tem como objetivo apresentar meus conhecimentos, projetos e formas de contato de maneira interativa e moderna.
+Bem-vindo ao repositório do meu portfólio pessoal, desenvolvido com **Angular**, **SCSS** e **TypeScript**! Este projeto tem como objetivo apresentar meus conhecimentos, projetos e formas de entrar em contato comigo.
 
 ## Funcionalidades
 - Navegação dinâmica entre seções (Home, About Me, Projects e Contact Me)
 - Design responsivo e estilizado com **SCSS**
 - Exibição de projetos com modal interativo
-- Formulário de contato funcional
 - Links para redes sociais e repositórios
 
 ## Tecnologias Utilizadas
@@ -36,15 +35,6 @@ Bem-vindo ao repositório do meu portfólio pessoal, desenvolvido com **Angular*
    ```
    http://localhost:4200
    ```
-
-## 📂 Estrutura do Projeto
-```
-📁 src/
- ┣ 📂 app/
- ┃ ┣ 📂 components/   # Componentes reutilizáveis
- ┃ ┗ app.module.ts   # Módulo principal
- ┗ index.html        # Página inicial
-```
 
 ## Contato
 Caso queira entrar em contato comigo, você pode acessar meu portfólio através de **[https://portifolio-sooty-tau.vercel.app/](#)** ou me encontrar nas redes sociais abaixo:
