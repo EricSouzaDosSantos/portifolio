@@ -37,7 +37,7 @@ Bem-vindo ao repositório do meu portfólio pessoal, desenvolvido com **Angular*
    ```
 
 ## Contato
-Caso queira entrar em contato comigo, você pode acessar meu portfólio através de **[https://portifolio-sooty-tau.vercel.app/](#)** ou me encontrar nas redes sociais abaixo:
+Caso queira entrar em contato comigo, você pode me ecnontrar nas redes sociais abaixo:
 - **LinkedIn**: [https://www.linkedin.com/in/dev-eric](#)
 - **GitHub**: [https://github.com/EricSouzaDosSantos/](#)
 - **Email**: ericsouzadossantos28@gmail.com
