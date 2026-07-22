@@ -110,8 +110,16 @@
   }
 }
 
-.timeline-body-in {
+// O padding fica no `.timeline-body-in`, não no item de grid
+// (`.timeline-body-clip`), porque padding nunca encolhe abaixo do valor
+// especificado — se estivesse no item de grid, ele criaria um piso de
+// altura mesmo com a track em 0fr, deixando uma linha do texto vazar.
+.timeline-body-clip {
   overflow: hidden;
+  min-height: 0;
+}
+
+.timeline-body-in {
   padding: 0 28px 26px;
   font-size: 14.5px;
   line-height: 1.8;

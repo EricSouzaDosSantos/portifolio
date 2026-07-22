@@ -18,11 +18,13 @@
     </button>
 
     <div class="timeline-body" [class.open]="isOpen()">
-      <ul class="timeline-body-in">
-        @for (achievement of experience().achievements; track $index) {
-          <li>{{ achievement }}</li>
-        }
-      </ul>
+      <div class="timeline-body-clip">
+        <ul class="timeline-body-in">
+          @for (achievement of experience().achievements; track $index) {
+            <li>{{ achievement }}</li>
+          }
+        </ul>
+      </div>
     </div>
   </div>
 </div>
