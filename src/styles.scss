@@ -1,13 +1,56 @@
+// Estilos globais.
+//
+// Ponto único de entrada para os parciais que emitem CSS global
+// (design tokens de cor + classes utilitárias + motion). Componentes nunca
+// devem `@use` estes três arquivos diretamente — só `styles/_tokens.scss`,
+// `styles/_typography.scss` e `styles/_mixins.scss`, que só definem
+// variáveis/mixins Sass e não emitem seletores.
+@use './styles/theme';
+@use './styles/utilities';
+@use './styles/motion';
+@use './styles/typography';
+
 @import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 @import '@fortawesome/fontawesome-free/css/brands.min.css';
 @import '@fortawesome/fontawesome-free/css/solid.min.css';
 
-$bg-body: #12214e;
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: typography.$font-sans;
+  min-height: 100vh;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--accent-2);
   }
-body{
-    background-color: $bg-body;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
 }

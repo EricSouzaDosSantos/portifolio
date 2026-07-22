@@ -1,0 +1,33 @@
+<header class="hdr" [class.scrolled]="pageScroll.headerScrolled()">
+  <div class="hdr-inner">
+    <span class="logo">Eric<span class="logo-dot">.</span>dev</span>
+
+    <ul class="nav-links">
+      @for (link of navLinks; track link.sectionId) {
+        <li>
+          <a
+            [href]="'#' + link.sectionId"
+            class="nav-link"
+            [class.active]="pageScroll.activeSectionId() === link.sectionId"
+            (click)="$event.preventDefault(); onNavLinkClick(link.sectionId)"
+          >{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+
+    <div class="hdr-actions">
+      <app-theme-toggle></app-theme-toggle>
+      <a class="btn-secondary" [href]="resumeUrl" download>Baixar CV</a>
+      <button type="button" class="menu-btn" (click)="toggleMenu()" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<app-mobile-nav
+  [isOpen]="menuOpen()"
+  [navLinks]="navLinks"
+  (linkActivated)="onNavLinkClick($event)"
+  (closeRequested)="closeMenu()"
+></app-mobile-nav>

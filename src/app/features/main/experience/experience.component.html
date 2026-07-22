@@ -1,0 +1,21 @@
+<section class="section container" id="experience">
+  <app-section-heading
+    class="reveal-on-scroll"
+    appScrollReveal
+    eyebrow="Minha Trajetória"
+    title="Experiência profissional"
+  ></app-section-heading>
+
+  <div class="timeline">
+    @for (experience of experiences; track $index) {
+      <app-experience-item
+        class="reveal-on-scroll"
+        appScrollReveal
+        [style.transition-delay.ms]="$index * 100"
+        [experience]="experience"
+        [isOpen]="expandedIndex() === $index"
+        (toggled)="toggle($index)"
+      ></app-experience-item>
+    }
+  </div>
+</section>

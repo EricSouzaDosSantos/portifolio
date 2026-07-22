@@ -1,0 +1,83 @@
+<div class="modal-overlay" (appModalBackdrop)="closeRequested.emit()">
+  <div class="modal-card">
+    <div class="modal-header" [class.has-image]="project().imageUrl">
+      @if (project().imageUrl; as imageUrl) {
+        <img class="modal-header-image" [src]="imageUrl" alt="" aria-hidden="true" />
+      }
+      <div class="modal-header-bg"></div>
+
+      <div class="modal-header-actions">
+        @if (project().repoUrl; as repoUrl) {
+          <a
+            class="modal-icon-btn modal-repo-btn"
+            [href]="repoUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Ver repositório no GitHub"
+            (click)="$event.stopPropagation()"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        }
+        <button type="button" class="modal-icon-btn modal-close" (click)="closeRequested.emit()" aria-label="Fechar">×</button>
+      </div>
+
+      <span class="modal-badge">{{ project().badge }}</span>
+      <h3 class="modal-title serif">{{ project().title }}</h3>
+
+      <div class="modal-tags">
+        @for (tag of project().tags; track $index) {
+          <button type="button" class="tag tag-filter" (click)="onTagClick(tag)" [title]="'Ver projetos com ' + tag">
+            {{ tag }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="modal-scroll">
+      <p class="modal-lead">{{ project().overview }}</p>
+
+      @if (videoEmbedUrl(); as src) {
+        <div class="modal-video">
+          <iframe
+            [src]="src"
+            title="Vídeo de demonstração do projeto"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      }
+
+      <h4><i class="fa-solid fa-list-check"></i> Principais funcionalidades</h4>
+      <ul>
+        @for (item of project().highlights; track $index) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+
+      @if (project().problemsSolved; as problemsSolved) {
+        <h4><i class="fa-solid fa-circle-check"></i> Problemas solucionados</h4>
+        <ul>
+          @for (item of problemsSolved; track $index) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      }
+
+      @if (project().architecture; as architecture) {
+        <h4><i class="fa-solid fa-diagram-project"></i> Arquitetura</h4>
+        <p>{{ architecture }}</p>
+      }
+
+      @if (project().myRole; as myRole) {
+        <h4><i class="fa-solid fa-user-gear"></i> Minha atuação</h4>
+        <ul>
+          @for (item of myRole; track $index) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</div>

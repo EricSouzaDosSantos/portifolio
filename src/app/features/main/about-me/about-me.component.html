@@ -1,0 +1,29 @@
+<section class="section container reveal-on-scroll" appScrollReveal id="about-me">
+  <app-section-heading eyebrow="Sobre mim" title="Conheça um pouco mais sobre mim"></app-section-heading>
+
+  <div class="about-grid">
+    <div class="bio-text">
+      @for (paragraph of about.paragraphs; track $index) {
+        <p [innerHTML]="paragraph"></p>
+      }
+      <div class="quote-block">
+        <p>{{ about.quote }}</p>
+      </div>
+    </div>
+
+    <div class="stack-groups">
+      @for (group of stackGroups; track group.title) {
+        <div class="stack-group">
+          <p class="stack-group-title mono">{{ group.title }}</p>
+          <div class="stack-tags">
+            @for (item of group.items; track $index) {
+              <button type="button" class="tag tag-filter" (click)="onSkillClick(item)" [title]="'Ver projetos com ' + item">
+                {{ item }}
+              </button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

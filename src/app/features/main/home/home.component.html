@@ -1,0 +1,30 @@
+<section class="hero container" id="home">
+  <div>
+    <p class="hero-eyebrow">{{ hero.eyebrow }}</p>
+    <h1 class="hero-title">
+      {{ hero.greeting }}<br />
+      <span class="grad-text">{{ hero.name }}</span>
+    </h1>
+    <p class="hero-sub">{{ hero.subtitle }}</p>
+
+    <div class="hero-cta">
+      <a class="btn-primary" [href]="resumeUrl" download>↓ Baixar meu CV</a>
+      <a class="btn-secondary" href="#projects" (click)="scrollToSection($event, 'projects')">Ver projetos</a>
+      <a class="btn-secondary" href="#contact" (click)="scrollToSection($event, 'contact')">Falar comigo</a>
+    </div>
+
+    <div class="chip-row">
+      @for (chip of hero.techChips; track $index) {
+        <span class="chip">{{ chip }}</span>
+      }
+    </div>
+  </div>
+
+  <div class="hero-photo-wrap">
+    <div class="blob-glow"></div>
+    <figure class="hero-photo">
+      <img [src]="hero.photoUrl" [alt]="hero.photoAlt" />
+    </figure>
+  </div>
+
+</section>

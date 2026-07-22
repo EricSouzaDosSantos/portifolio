@@ -1,0 +1,9 @@
+// Design tokens - tipografia.
+//
+// Só define variáveis Sass; seguro para `@use` em qualquer componente.
+// As famílias correspondentes são carregadas via Google Fonts em
+// `src/index.html` (Newsreader, Public Sans, IBM Plex Mono).
+
+$font-serif: 'Newsreader', serif;
+$font-sans: 'Public Sans', sans-serif;
+$font-mono: 'IBM Plex Mono', monospace;

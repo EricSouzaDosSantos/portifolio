@@ -1,0 +1,1 @@
+export const RESUME_FILE_URL = '/ERIC_SOUZA_CURRICULO_DEV_JR.pdf';

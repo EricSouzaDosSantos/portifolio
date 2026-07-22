@@ -1,0 +1,33 @@
+<section class="section container" id="contact">
+  <div class="contact-card reveal-on-scroll" appScrollReveal>
+    <p class="contact-eyebrow">Vamos conversar</p>
+    <h2 class="contact-title serif">Aberto a oportunidades como<br />Desenvolvedor Backend</h2>
+    <p class="contact-sub">
+      Se você procura alguém que se aprofunda em arquitetura, boas práticas e sistemas escaláveis, ficarei feliz em
+      conversar.
+    </p>
+
+    <a class="contact-email" [href]="'mailto:' + personalInfo.email">{{ personalInfo.email }}</a>
+
+    <div class="icon-row">
+      @for (icon of contactIcons; track icon.label) {
+        <a
+          class="icon-btn"
+          [href]="icon.url"
+          [target]="icon.download ? null : '_blank'"
+          [rel]="icon.download ? null : 'noopener noreferrer'"
+          [attr.download]="icon.download ? '' : null"
+          [title]="icon.label"
+          [style.--icon-color]="icon.color"
+        >
+          <i [class]="icon.iconClass"></i>
+        </a>
+      }
+    </div>
+
+    <div class="contact-meta">
+      <span>{{ personalInfo.location }}</span>
+      <span>Disponível para novas oportunidades</span>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,105 @@
+@use '../../../../styles/tokens';
+@use '../../../../styles/typography';
+
+.contact-card {
+  background: linear-gradient(135deg, var(--bg-elev), var(--bg-elev-2));
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.contact-title {
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 20px;
+}
+
+.contact-sub {
+  color: var(--text-dim);
+  font-size: 16px;
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+
+.contact-email {
+  font-family: typography.$font-serif;
+  font-style: italic;
+  font-size: clamp(22px, 3vw, 30px);
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  transition: border-color tokens.$transition-base;
+
+  &:hover {
+    border-color: var(--accent);
+  }
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  // Ícones de marca (WhatsApp, LinkedIn...) definem --icon-color via data;
+  // sem essa cor, cai no padrão do tema.
+  color: var(--icon-color, var(--text));
+  transition: all tokens.$transition-base;
+
+  &:hover {
+    border-color: var(--icon-color, var(--accent));
+    color: var(--icon-color, var(--accent));
+    transform: translateY(-4px);
+  }
+
+  &:active {
+    transform: scale(0.88);
+  }
+}
+
+.contact-meta {
+  font-size: 13px;
+  color: var(--text-dim);
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: tokens.$bp-tablet) {
+  .contact-card {
+    padding: 44px 28px;
+  }
+}
+
+@media (max-width: tokens.$bp-mobile) {
+  .contact-card {
+    padding: 36px 20px;
+    border-radius: 20px;
+  }
+}

@@ -1,0 +1,163 @@
+// Design tokens - classes utilitárias globais.
+//
+// Padrões visuais repetidos entre várias features (container, títulos de
+// seção, botões, chips/tags, helpers tipográficos). Ficam aqui em vez de
+// duplicados em cada `.component.scss` para que qualquer ajuste futuro de
+// "linguagem visual" do projeto seja feito num único lugar. Emite CSS
+// global, por isso só pode ser importado uma vez, em `src/styles.scss`.
+
+@use './tokens';
+@use './typography';
+@use './mixins';
+
+.container {
+  @include mixins.container;
+}
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  position: relative;
+
+  @media (max-width: tokens.$bp-tablet) {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  @media (max-width: tokens.$bp-mobile) {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+
+.section-eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: typography.$font-serif;
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 500;
+  margin-bottom: 56px;
+  max-width: 620px;
+
+  @media (max-width: tokens.$bp-mobile) {
+    margin-bottom: 36px;
+  }
+}
+
+.mono {
+  font-family: typography.$font-mono;
+}
+
+.serif {
+  font-family: typography.$font-serif;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.grad-text {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  @include mixins.btn-reset;
+  @include mixins.focus-ring;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 11px 22px;
+  border-radius: 10px;
+  transition: transform tokens.$transition-fast, box-shadow tokens.$transition-fast;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -10px var(--accent);
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.95);
+    box-shadow: 0 4px 12px -6px var(--accent);
+  }
+}
+
+.btn-secondary {
+  @include mixins.btn-reset;
+  @include mixins.focus-ring;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 21px;
+  border-radius: 10px;
+  transition: all tokens.$transition-fast;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.chip {
+  font-size: 12.5px;
+  padding: 7px 13px;
+  border-radius: 8px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+  transition: border-color tokens.$transition-base, color tokens.$transition-base, transform tokens.$transition-base;
+  cursor: default;
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-3px);
+  }
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12.5px;
+  padding: 5px 11px;
+  border-radius: 7px;
+  background: var(--bg-elev-2);
+  color: var(--text-dim);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), background tokens.$transition-base, color tokens.$transition-base;
+  cursor: default;
+
+  &:hover {
+    background: var(--accent);
+    color: var(--accent-contrast);
+    transform: translateY(-3px);
+  }
+}
+
+// Variante de `.tag` usada em badges que funcionam como filtro (rodapé dos
+// cards de projeto, modal, cloud de tags e stack do "Sobre mim"): mesmo
+// visual do `.tag`, mas sinaliza que é clicável.
+.tag-filter {
+  @include mixins.focus-ring;
+  cursor: pointer;
+}

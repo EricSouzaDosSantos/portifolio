@@ -1,0 +1,33 @@
+<section class="section container" id="certifications">
+  <app-section-heading
+    class="reveal-on-scroll"
+    appScrollReveal
+    eyebrow="Formação"
+    title="Certificações"
+  ></app-section-heading>
+
+  <div class="cert-grid">
+    @for (cert of certifications; track cert.title) {
+      <a
+        class="cert-card reveal-on-scroll"
+        appScrollReveal
+        [href]="cert.credentialUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        [title]="'Ver credencial de ' + cert.title"
+      >
+        <div class="cert-badge-wrap">
+          <div class="cert-glow"></div>
+          <img class="cert-badge" [src]="cert.badgeImageUrl" [alt]="cert.title" loading="lazy" />
+        </div>
+
+        <div class="cert-info">
+          <p class="cert-title serif">{{ cert.title }}</p>
+          <p class="cert-issuer">{{ cert.issuer }}</p>
+          <p class="cert-date mono">Conquistada em {{ cert.issuedAt }}</p>
+          <span class="cert-link">Ver credencial <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </a>
+    }
+  </div>
+</section>

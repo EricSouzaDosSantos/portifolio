@@ -1,0 +1,23 @@
+@use '../../../../styles/tokens';
+
+.timeline {
+  position: relative;
+  padding-left: 36px;
+  max-width: 900px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(var(--accent), var(--border));
+  }
+}
+
+@media (max-width: tokens.$bp-mobile) {
+  .timeline {
+    padding-left: 26px;
+  }
+}

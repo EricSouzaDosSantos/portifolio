@@ -1,0 +1,113 @@
+@use '../../../../styles/tokens';
+@use '../../../../styles/typography';
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.bio-text {
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: var(--text-dim);
+
+  p {
+    margin-bottom: 18px;
+  }
+}
+
+// O conteúdo de `.bio-text p` vem de [innerHTML] (parágrafos com <strong>
+// embutido), então não recebe o atributo de encapsulamento do Angular —
+// por isso a regra precisa do ::ng-deep para alcançar o <strong> injetado.
+:host ::ng-deep .bio-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.quote-block {
+  border-left: 2px solid var(--accent);
+  padding: 6px 0 6px 26px;
+  margin-top: 28px;
+
+  p {
+    font-family: typography.$font-serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 0;
+  }
+}
+
+.stack-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.stack-group {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  transition: border-color tokens.$transition-base, transform tokens.$transition-base;
+
+  &:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+}
+
+.stack-group-title {
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+// Entrada em cascata dos grupos de stack quando a seção fica visível.
+.reveal-on-scroll .stack-group {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal-on-scroll.is-visible .stack-group {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-on-scroll.is-visible .stack-group:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.reveal-on-scroll.is-visible .stack-group:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
+.reveal-on-scroll.is-visible .stack-group:nth-child(4) {
+  transition-delay: 0.36s;
+}
+
+@media (max-width: tokens.$bp-tablet) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+}
+
+@media (max-width: tokens.$bp-mobile) {
+  .stack-groups {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,15 @@
+// Design tokens - layout e motion (não relacionados a cor).
+//
+// Só define variáveis Sass (nenhum seletor é emitido), então este parcial
+// pode ser importado com segurança em qualquer arquivo .scss de componente
+// via `@use` sem duplicar CSS no bundle final.
+
+$container-max-width: 1180px;
+
+$bp-mobile: 640px;
+$bp-tablet: 920px;
+$bp-grid: 1100px;
+
+$transition-fast: 0.25s;
+$transition-base: 0.35s;
+$transition-slow: 0.5s;

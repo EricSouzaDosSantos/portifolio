@@ -1,0 +1,82 @@
+@use '../../../../styles/tokens';
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+}
+
+.education-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 4px;
+  border-bottom: 1px solid var(--border);
+  border-left: 2px solid transparent;
+  transition: border-color tokens.$transition-base, padding-left tokens.$transition-base, background tokens.$transition-base;
+
+  &:hover {
+    border-left-color: var(--accent);
+    padding-left: 16px;
+    background: var(--bg-elev);
+  }
+}
+
+.education-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.education-degree {
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.education-institution {
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+.education-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  flex-shrink: 0;
+}
+
+.education-period {
+  font-size: 12px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.education-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--bg-elev-2);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.education-semesters {
+  color: var(--text-dim);
+}
+
+@media (max-width: tokens.$bp-mobile) {
+  .education-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .education-meta {
+    align-self: flex-start;
+  }
+}

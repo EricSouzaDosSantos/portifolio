@@ -1,0 +1,7 @@
+<div class="mobile-nav" [class.open]="isOpen()">
+  <button type="button" class="mobile-close" (click)="closeRequested.emit()" aria-label="Fechar menu">×</button>
+
+  @for (link of navLinks(); track link.sectionId) {
+    <a [href]="'#' + link.sectionId" (click)="onLinkClick($event, link.sectionId)">{{ link.label }}</a>
+  }
+</div>

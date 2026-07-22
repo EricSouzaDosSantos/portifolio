@@ -1,0 +1,27 @@
+<section class="section container" id="courses">
+  <app-section-heading
+    class="reveal-on-scroll"
+    appScrollReveal
+    eyebrow="Formação contínua"
+    title="Cursos e capacitações"
+  ></app-section-heading>
+
+  <p class="courses-summary reveal-on-scroll" appScrollReveal>
+    {{ courses.length }} cursos concluídos entre 2023 e 2025 — {{ totalHours }} horas de estudo no total.
+  </p>
+
+  <div class="courses-list">
+    @for (course of courses; track course.title; let i = $index) {
+      <div class="course-row reveal-on-scroll" appScrollReveal [style.transition-delay.ms]="i * 60">
+        <div class="course-main">
+          <p class="course-title">{{ course.title }}</p>
+          <p class="course-institution">{{ course.institution }}</p>
+        </div>
+        <div class="course-meta">
+          <span class="course-period mono">{{ formatPeriod(course) }}</span>
+          <span class="course-hours">{{ course.hours }}h</span>
+        </div>
+      </div>
+    }
+  </div>
+</section>

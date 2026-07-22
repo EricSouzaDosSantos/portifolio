@@ -1,0 +1,26 @@
+<section class="section container" id="education">
+  <app-section-heading
+    class="reveal-on-scroll"
+    appScrollReveal
+    eyebrow="Formação"
+    title="Formação acadêmica"
+  ></app-section-heading>
+
+  <div class="education-list">
+    @for (item of education; track item.degree; let i = $index) {
+      <div class="education-row reveal-on-scroll" appScrollReveal [style.transition-delay.ms]="i * 60">
+        <div class="education-main">
+          <p class="education-degree">{{ item.degree }}</p>
+          <p class="education-institution">{{ item.institution }}</p>
+        </div>
+        <div class="education-meta">
+          <span class="education-period mono">{{ item.startDate }} — {{ item.endDate }}</span>
+          <span class="education-status education-semesters">{{ item.semesterLabel }}</span>
+          @if (item.inProgress) {
+            <span class="education-status">Em andamento</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,55 @@
+<section class="section container" id="projects">
+  <app-section-heading
+    class="reveal-on-scroll"
+    appScrollReveal
+    eyebrow="Trabalho"
+    title="Projetos e contribuições"
+  ></app-section-heading>
+
+  <div class="projects-filter reveal-on-scroll" appScrollReveal>
+    <div class="filter-input-wrap">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        type="text"
+        class="filter-input"
+        placeholder="Filtrar por tecnologia — Java, RabbitMQ, AWS..."
+        [value]="searchTerm()"
+        (input)="onSearchInput($event)"
+      />
+      @if (searchTerm()) {
+        <button type="button" class="filter-clear" (click)="clearFilter()" aria-label="Limpar filtro">×</button>
+      }
+    </div>
+
+    <div class="filter-tags">
+      @for (tag of popularTags; track tag) {
+        <button type="button" class="tag tag-filter" [class.active]="isActiveTag(tag)" (click)="onTagFilterClick(tag)">
+          {{ tag }}
+        </button>
+      }
+    </div>
+  </div>
+
+  @if (filteredProjects().length) {
+    <div class="projects-grid">
+      @for (project of filteredProjects(); track project.title; let i = $index) {
+        <app-project-card
+          class="reveal-on-scroll"
+          appScrollReveal
+          [style.transition-delay.ms]="i * 100"
+          [project]="project"
+          (selected)="openProject($event)"
+        ></app-project-card>
+      }
+    </div>
+  } @else {
+    <div class="projects-empty">
+      <p>Nenhum projeto encontrado para <strong>"{{ searchTerm() }}"</strong>.</p>
+      <button type="button" class="btn-secondary" (click)="clearFilter()">Limpar filtro</button>
+    </div>
+  }
+</section>
+
+@if (activeProject(); as project) {
+  <app-project-modal [project]="project" (closeRequested)="closeProject()"></app-project-modal>
+}

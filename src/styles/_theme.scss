@@ -1,0 +1,49 @@
+// Design tokens - cores.
+//
+// Único ponto de verdade para a paleta do projeto. Qualquer ajuste de cor
+// (tema dark/light ou paleta de destaque) deve ser feito aqui, nunca em
+// arquivos de componente. Estas regras emitem CSS global e por isso este
+// arquivo só pode ser importado uma única vez, em `src/styles.scss`.
+
+:root {
+  --radius: 18px;
+
+  // Tema dark (default)
+  --bg: oklch(0.165 0.016 252);
+  --bg-elev: oklch(0.205 0.018 252);
+  --bg-elev-2: oklch(0.25 0.02 252);
+  --text: oklch(0.93 0.008 252);
+  --text-dim: oklch(0.66 0.014 252);
+  --border: oklch(0.32 0.022 252);
+  --shadow: 0 20px 60px -20px oklch(0.05 0.02 252 / 0.6);
+
+  // Paleta de destaque "blue" (default do projeto)
+  --accent: oklch(0.68 0.15 252);
+  --accent-2: oklch(0.68 0.14 215);
+  // Cor de texto usada sobre superfícies pintadas com --accent (constante
+  // entre temas, sempre precisa contrastar com um tom claro/saturado).
+  --accent-contrast: oklch(0.15 0.01 252);
+}
+
+:root[data-theme='light'] {
+  --bg: oklch(0.975 0.006 252);
+  --bg-elev: oklch(1 0 0);
+  --bg-elev-2: oklch(0.955 0.008 252);
+  --text: oklch(0.24 0.02 252);
+  --text-dim: oklch(0.46 0.02 252);
+  --border: oklch(0.87 0.012 252);
+  --shadow: 0 20px 50px -25px oklch(0.4 0.03 252 / 0.25);
+}
+
+// Paletas de destaque alternativas (opcionais, sem seletor de UI hoje).
+// Trocar a paleta ativa do projeto é uma questão de aplicar
+// `data-palette="emerald|gold"` no <html> (ver ThemeService).
+:root[data-palette='emerald'] {
+  --accent: oklch(0.66 0.13 155);
+  --accent-2: oklch(0.66 0.12 195);
+}
+
+:root[data-palette='gold'] {
+  --accent: oklch(0.72 0.13 75);
+  --accent-2: oklch(0.65 0.14 40);
+}

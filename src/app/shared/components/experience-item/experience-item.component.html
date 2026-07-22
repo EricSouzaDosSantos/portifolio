@@ -1,0 +1,28 @@
+<div class="timeline-item">
+  <span class="timeline-dot"></span>
+
+  <div class="timeline-card">
+    <button type="button" class="timeline-head" (click)="toggled.emit()">
+      <span class="timeline-head-info">
+        <span class="timeline-role serif">{{ experience().role }}</span>
+        <span class="timeline-meta">
+          <span>{{ experience().company }}</span>
+          <span [class.timeline-current]="experience().current">{{ experience().period }}</span>
+          <span class="timeline-duration">{{ duration() }}</span>
+          @if (experience().location) {
+            <span>{{ experience().location }}</span>
+          }
+        </span>
+      </span>
+      <span class="timeline-toggle" [class.open]="isOpen()">+</span>
+    </button>
+
+    <div class="timeline-body" [class.open]="isOpen()">
+      <ul class="timeline-body-in">
+        @for (achievement of experience().achievements; track $index) {
+          <li>{{ achievement }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

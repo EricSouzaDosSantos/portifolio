@@ -1,0 +1,44 @@
+<article class="project-card" (click)="selected.emit(project())">
+  <div class="project-card-spotlight"></div>
+
+  <div class="project-visual" [class.has-image]="project().imageUrl" [style.background]="project().imageBackground || null">
+    @if (project().imageUrl; as imageUrl) {
+      <img
+        [src]="imageUrl"
+        [alt]="project().title"
+        loading="lazy"
+        [style.object-fit]="project().imageFit || 'contain'"
+        [style.padding]="project().imagePadding || '22px'"
+      />
+    } @else {
+      <span class="mono">{{ project().visualLabel }}</span>
+    }
+
+    <span class="project-badge">{{ project().badge }}</span>
+
+    @if (project().repoUrl; as repoUrl) {
+      <a
+        class="project-repo-link"
+        [href]="repoUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Ver repositório no GitHub"
+        (click)="$event.stopPropagation()"
+      >
+        <i class="fa-brands fa-github"></i>
+      </a>
+    }
+  </div>
+
+  <div class="project-body">
+    <p class="project-title serif">{{ project().title }}</p>
+    <p class="project-desc">{{ project().summary }}</p>
+    <div class="project-tags">
+      @for (tag of project().tags; track $index) {
+        <button type="button" class="tag tag-filter" (click)="onTagClick($event, tag)" [title]="'Ver projetos com ' + tag">
+          {{ tag }}
+        </button>
+      }
+    </div>
+  </div>
+</article>

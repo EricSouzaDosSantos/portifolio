@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { MainComponent } from './components/main/main.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FooterComponent } from './layout/footer/footer.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { ProgressBarComponent } from './layout/progress-bar/progress-bar.component';
+import { MainComponent } from './features/main/main.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, MainComponent, FooterComponent],
+  imports: [ProgressBarComponent, HeaderComponent, MainComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-  title = 'portifolio';
-}
+export class AppComponent {}
